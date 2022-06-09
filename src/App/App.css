@@ -57,6 +57,9 @@ h5 {
 .nav div svg:hover {
   fill: var(--svg-hover-color);
 }
+.bi-active {
+  fill: var(--svg-hover-color) !important;
+}
 .nav-first {
   position: absolute;
   top: 100px;
@@ -88,12 +91,15 @@ h5 {
   margin-left: 15px;
 }
 .info h1,
-h4,
-h5,
-p,
-a {
+.info h4,
+.info h5,
+.info p,
+.info a {
   margin: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+.info h5 {
+  margin-top: 32px;
 }
 .info p {
   font-weight: 700;
