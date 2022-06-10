@@ -1,6 +1,6 @@
 //Random bg
 const path = '/images/bg';
-const background = [
+const randomFilms = [
   {
     youtube: 'https://www.youtube.com/embed/foyufD52aog',
     url: 'https://www.omdbapi.com/?i=tt6139732&apikey=ec63a73c',
@@ -52,6 +52,6 @@ const background = [
     img: `${path}/walle.webp`
   }
 ];
-const index = background[Math.floor(Math.random() * 10)];
+const index = randomFilms[Math.floor(Math.random() * randomFilms.length)];
 
 export default index;

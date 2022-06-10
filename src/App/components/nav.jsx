@@ -5,9 +5,9 @@ const Nav = () => {
   const handleColor = () => {
     setTimeout(() => {
       setActive(new URL(window.location.href).pathname);
-      console.log(new URL(window.location.href).pathname);
     }, 0);
   };
+  handleColor();
   return (
     <div className="nav">
       <div className="nav-first">
@@ -21,9 +21,9 @@ const Nav = () => {
           </svg>
         </Link>
 
-        <Link to={'/film'} onClick={handleColor}>
+        <Link to={'/films'} onClick={handleColor}>
           <svg
-            className={active === '/film' ? 'bi-active' : 'bi'}
+            className={active === '/films' ? 'bi-active' : 'bi'}
             viewBox="0 0 16 16"
           >
             <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" />

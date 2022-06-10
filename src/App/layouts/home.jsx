@@ -1,27 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import Index from '../untils/index.js';
+import React from 'react';
+import GetFilms from '../untils/getFilms.js';
 
 const Home = () => {
-  const [film, setFilm] = useState(['film']);
-
-  const getAnswer = async () => {
-    const res = await fetch(Index.url);
-    const json = await res.json();
-    setFilm(json);
-  };
-
-  useEffect(() => {
-    getAnswer();
-  }, []);
-
+  const getFilm = GetFilms('random');
+  const [film, index] = [getFilm[0], { img: getFilm[1], youtube: getFilm[2] }];
   return (
     <div
-      className="background"
+      className="home"
       style={{
-        backgroundImage: `url(${Index.img})`
+        backgroundImage: `url(${index.img})`
       }}
     >
-      <div className="menu-card">
+      <div className="menu-info">
         <div className="info">
           <p>&middot; Live</p>
           <h1>{film.Title}</h1>
@@ -31,7 +21,7 @@ const Home = () => {
           <h4>Time: {film.Runtime}</h4>
 
           <h5>{film.Plot}</h5>
-          <a target="_blank" rel="noreferrer" href={Index.youtube}>
+          <a target="_blank" rel="noreferrer" href={index.youtube}>
             Watch now
           </a>
         </div>
@@ -65,9 +55,3 @@ const Home = () => {
 };
 
 export default Home;
-
-/*
-<>
-
-</>
-*/
