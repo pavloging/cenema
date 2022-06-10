@@ -24,6 +24,7 @@ const SendFilms = (parameter) => {
 
   useEffect(() => {
     getAnswer();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   let send;
   parameter === 'random'
