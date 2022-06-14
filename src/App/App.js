@@ -7,8 +7,13 @@ import Films from './layouts/films.jsx';
 import Marcet from './layouts/marcet.jsx';
 import Like from './layouts/like.jsx';
 import LogOut from './layouts/logOut.jsx';
+import Movie from './layouts/movie.jsx';
+import NoPage from './layouts/noPage.jsx';
+
+import GetFilms from './untils/getFilms.js';
 
 function App() {
+  const [getFilms, getYoutube] = GetFilms('list');
   return (
     <div>
       <Nav />
@@ -19,6 +24,15 @@ function App() {
         <Route path="/marcet" exact component={Marcet} />
         <Route path="/like" exact component={Like} />
         <Route path="/log-out" exact component={LogOut} />
+        {getFilms.map((el, index) => (
+          <Route
+            key={el.imdbID}
+            path={'/films/' + el.imdbID}
+            render={() => <Movie film={el} youtube={getYoutube[index]} />}
+          />
+        ))}
+
+        <Route path="/" component={NoPage} />
       </Switch>
     </div>
   );

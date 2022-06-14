@@ -4,7 +4,11 @@ const Nav = () => {
   const [active, setActive] = useState('/');
   const handleColor = () => {
     setTimeout(() => {
-      setActive(new URL(window.location.href).pathname);
+      if (new URL(window.location.href).pathname.slice(0, 6) === '/films') {
+        setActive(new URL(window.location.href).pathname.slice(0, 6));
+      } else {
+        setActive(new URL(window.location.href).pathname);
+      }
     }, 0);
   };
   handleColor();

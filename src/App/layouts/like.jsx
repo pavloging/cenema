@@ -9,7 +9,6 @@ const Like = () => {
   const liked = likedKey.map((el) => {
     return JSON.parse(localStorage.getItem(el));
   });
-  console.log(liked.length !== 0);
   return (
     <>
       <div className="films">
@@ -27,7 +26,7 @@ const Like = () => {
                   <p className="card-text">{el.Genre}</p>
                   <Link
                     rel="noreferrer"
-                    to={el.Title}
+                    to={'/films/' + el.imdbID}
                     className="btn btn-primary"
                   >
                     Go somewhere

@@ -389,3 +389,29 @@ h5 {
   align-items: center;
   height: 100vh;
 }
+
+/* Movie */
+.movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 60px;
+}
+.movie h1 {
+  color: var(--font-color) !important;
+}
+/* NoPage */
+.no-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.no-page h1,
+.no-page p {
+  color: var(--font-color) !important;
+}
+.no-page video {
+  border-radius: 15px;
+}

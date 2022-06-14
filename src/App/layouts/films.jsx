@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import GetFilms from '../untils/getFilms.js';
 import LikeSvg from '../components/likeSvg.jsx';
 const Films = () => {
-  const getFilms = GetFilms('list');
+  const getFilms = GetFilms('list')[0];
   return (
     <>
       <div className="films">
@@ -21,7 +21,7 @@ const Films = () => {
                   <p className="card-text">{el.Genre}</p>
                   <Link
                     rel="noreferrer"
-                    to={el.Title}
+                    to={'films/' + el.imdbID}
                     className="btn btn-primary"
                   >
                     Go somewhere

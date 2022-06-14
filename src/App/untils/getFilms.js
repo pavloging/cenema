@@ -4,6 +4,8 @@ import index from './randomIndexFilms.js';
 
 const SendFilms = (parameter) => {
   const [film, setFilm] = useState(['film']);
+  const youtube = [];
+  catalogFilms.map((el) => youtube.push(el.youtube));
 
   const getAnswer = async () => {
     if (parameter === 'random') {
@@ -24,12 +26,15 @@ const SendFilms = (parameter) => {
 
   useEffect(() => {
     getAnswer();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // film[0].youtube = youtube[0];
+
   let send;
   parameter === 'random'
     ? (send = [film, index.img, index.youtube])
-    : (send = film);
+    : (send = [film, youtube]);
   return send;
 };
 
