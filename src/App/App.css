@@ -281,6 +281,9 @@ h5 {
   height: 100vh;
   margin-left: 60px;
 }
+.films-list {
+  margin: 0 12%;
+}
 .card {
   border-top-left-radius: calc(1rem - 1px) !important;
   border-top-right-radius: calc(1rem - 1px) !important;

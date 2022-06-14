@@ -7,10 +7,7 @@ const Films = () => {
   return (
     <>
       <div className="films">
-        <div
-          className="d-flex flex-wrap justify-content-center"
-          style={{ margin: '0 10%' }}
-        >
+        <div className="films-list d-flex flex-wrap justify-content-center">
           {getFilms[0] !== 'film' ? (
             getFilms.map((el) => (
               <div

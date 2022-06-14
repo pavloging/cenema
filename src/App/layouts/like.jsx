@@ -13,10 +13,7 @@ const Like = () => {
   return (
     <>
       <div className="films">
-        <div
-          className="d-flex flex-wrap justify-content-center"
-          style={{ margin: '0 12%' }}
-        >
+        <div className="films-list d-flex flex-wrap justify-content-center">
           {liked.length !== 0 ? (
             liked.map((el) => (
               <div
