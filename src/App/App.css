@@ -278,6 +278,7 @@ h5 {
 }
 /* FILMS */
 .films {
+  height: 100vh;
   margin-left: 60px;
 }
 .card {
