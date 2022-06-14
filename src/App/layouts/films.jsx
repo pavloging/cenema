@@ -31,11 +31,7 @@ const Films = () => {
               </div>
             ))
           ) : (
-            <div className="lds-spinner">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+            <div className="lds-roller">
               <div></div>
               <div></div>
               <div></div>
