@@ -4,11 +4,12 @@
 }
 :root {
   --main-color: #110209;
-  --font-color: blanchedalmond;
+  --font-color: #50455d;
+  --font-color-white: blanchedalmond;
   --svg-color: #50455d;
   --svg-hover-color: #65b4ae;
   --btn: blanchedalmond;
-  --btn-hover: var(--svg-hover-color);
+  --btn-hover: #65b4ae;
 }
 * {
   margin: 0;
@@ -20,7 +21,7 @@ body {
 h1,
 a,
 p {
-  color: var(--font-color) !important;
+  color: var(--font-color-white) !important;
 }
 h4,
 h5 {
@@ -67,10 +68,11 @@ h5 {
 }
 /* PANEL */
 .panel {
-  position: absolute;
+  position: fixed;
   top: 25px;
   right: 25px;
   display: flex;
+  z-index: 100;
 }
 .panel .search {
   display: flex;
@@ -276,10 +278,21 @@ h5 {
 }
 /* FILMS */
 .films {
-  height: 100vh;
-  background-color: #50455d;
   margin-left: 60px;
 }
+.card {
+  border-top-left-radius: calc(1rem - 1px) !important;
+  border-top-right-radius: calc(1rem - 1px) !important;
+}
+.card-img-top {
+  height: 75%;
+  border-top-left-radius: calc(1rem - 1px) !important;
+  border-top-right-radius: calc(1rem - 1px) !important;
+}
+.card-text {
+  color: var(--font-color) !important;
+}
+
 /* Loaging */
 .lds-spinner {
   display: flex;
@@ -359,4 +372,10 @@ h5 {
   100% {
     opacity: 0;
   }
+}
+/* Like */
+.not-favorite {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }
