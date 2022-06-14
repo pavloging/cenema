@@ -43,11 +43,11 @@ const Home = () => {
           <h1>es</h1>
         </div>
         <div className="poster">
-          <img src="/images/mov/movie.avif" alt="movie-img" />
-          <img src="/images/mov/movie1.avif" alt="movie-img" />
-          <img src="/images/mov/movie2.avif" alt="movie-img" />
-          <img src="/images/mov/movie3.avif" alt="movie-img" />
-          <img src="/images/mov/movie4.avif" alt="movie-img" />
+          <img src="/images/mov/movie.webp" alt="movie-img" />
+          <img src="/images/mov/movie1.webp" alt="movie-img" />
+          <img src="/images/mov/movie2.webp" alt="movie-img" />
+          <img src="/images/mov/movie3.webp" alt="movie-img" />
+          <img src="/images/mov/movie4.webp" alt="movie-img" />
         </div>
       </div>
     </div>
