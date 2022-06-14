@@ -26,7 +26,7 @@ function App() {
         <Route path="/log-out" exact component={LogOut} />
         {getFilms.map((el, index) => (
           <Route
-            key={el.imdbID}
+            key={el.imdbID + 1}
             path={'/films/' + el.imdbID}
             render={() => <Movie film={el} youtube={getYoutube[index]} />}
           />
