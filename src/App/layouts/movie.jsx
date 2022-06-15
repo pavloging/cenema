@@ -1,4 +1,3 @@
-import React from 'react';
 const Movie = ({ film, youtube }) => {
   return (
     <div className="movie">

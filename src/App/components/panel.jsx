@@ -1,11 +1,23 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import GetFilms from '../untils/getFilms.js';
+
 const Panel = () => {
   const [icon, setIcon] = useState(false);
+  const [change, setChange] = useState('');
+  const getFilms = GetFilms('list')[0];
+
   const hangleIcon = () => {
     setIcon(!icon);
   };
+  console.log(change);
+
   return (
     <div className="panel">
+      <h1>
+        {getFilms.map((el) => {
+          return el.Title === change ? el.Title : null;
+        })}
+      </h1>
       <div className={icon ? 'search active' : 'search'}>
         <div className="icon-github">
           <a
@@ -34,6 +46,7 @@ const Panel = () => {
             type="search"
             placeholder="Search"
             aria-label="Search"
+            onChange={(event) => setChange(event.target.value)}
           />
         </form>
       </div>

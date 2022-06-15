@@ -1,4 +1,3 @@
-import { React } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Nav from './components/nav.jsx';
 import Panel from './components/panel.jsx';
@@ -9,7 +8,6 @@ import Like from './layouts/like.jsx';
 import LogOut from './layouts/logOut.jsx';
 import Movie from './layouts/movie.jsx';
 import NoPage from './layouts/noPage.jsx';
-
 import GetFilms from './untils/getFilms.js';
 
 function App() {

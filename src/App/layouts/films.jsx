@@ -1,7 +1,7 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import GetFilms from '../untils/getFilms.js';
 import LikeSvg from '../components/likeSvg.jsx';
+
 const Films = () => {
   const getFilms = GetFilms('list')[0];
   return (

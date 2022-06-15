@@ -1,6 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import LikeSvg from '../components/likeSvg';
+
 const Like = () => {
   const likedKey = [];
   for (let i = 0; i < localStorage.length; i++) {

@@ -1,4 +1,3 @@
-import React from 'react';
 import GetFilms from '../untils/getFilms.js';
 
 const Home = () => {
