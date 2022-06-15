@@ -15,7 +15,9 @@ const Panel = () => {
     <div className="panel">
       <h1>
         {getFilms.map((el) => {
-          return el.Title === change ? el.Title : null;
+          return el.Title.toLowerCase().trim() === change.toLowerCase().trim()
+            ? el.Title
+            : null;
         })}
       </h1>
       <div className={icon ? 'search active' : 'search'}>
