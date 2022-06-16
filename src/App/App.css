@@ -126,11 +126,11 @@ h5 {
 .searchRes {
   position: fixed;
   top: 80px;
-  right: 95px;
+  right: 175px;
   margin-right: -40px;
   display: flex;
   height: 60px;
-  width: 260px;
+  width: 185px;
   z-index: 100;
 }
 .searchRes div {
@@ -166,6 +166,53 @@ h5 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.dropdown {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute !important;
+  top: 62px;
+  right: -5px;
+  background-color: var(--main-color);
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.5s;
+  animation: dropdown ease-in-out 0.4s;
+}
+.dropdown::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--main-color);
+  transform: rotate(45deg);
+}
+.dropdown a {
+  text-decoration: none;
+}
+.dropdown p {
+  padding: 15px;
+  margin: 5px 0;
+  transition: 0.5s;
+}
+.dropdown p:hover {
+  cursor: pointer;
+  color: var(--font-color-white) !important;
+  transition: 0.5s;
+}
+.none {
+  display: none;
+}
+@keyframes dropdown {
+  0% {
+    top: -170px;
+    transform: rotate3d(1, 1, 1, 30deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
 }
 /* HOME */
 .home {
@@ -432,9 +479,9 @@ h5 {
   align-items: center;
 }
 /* MARCKET */
-.marcet {
+/* .marcet {
   background-color: #05524b;
-}
+} */
 .card-container {
   display: flex;
   align-items: center;
@@ -552,6 +599,19 @@ h5 {
 .card-container .card:nth-child(3) .box .content .icon {
   background-color: #a2e91e;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* LOGIN */
+.login {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.login .row {
+  width: 70%;
+  margin-bottom: 10vh;
 }
 
 /* NoPage */

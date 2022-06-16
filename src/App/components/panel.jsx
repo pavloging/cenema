@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom';
 import GetFilms from '../untils/getFilms.js';
 
 const Panel = () => {
+  const [dropDown, setDropDown] = useState(false);
   const [icon, setIcon] = useState(false);
   const [change, setChange] = useState('');
   const getFilms = GetFilms('list')[0];
-
-  const hangleIcon = () => {
-    setIcon(!icon);
-  };
+  const hangleIcon = () => setIcon(!icon);
+  const hangleDropDown = () => setDropDown(!dropDown);
 
   return (
     <div className="panel">
@@ -60,8 +59,25 @@ const Panel = () => {
             })
           : null}
       </div>
-      <div className="risycle">
+      <div className="risycle" onClick={hangleDropDown}>
         <img src="/images/mary.jpg" alt="Profile-img" />
+      </div>
+      <div className={dropDown ? 'dropdown' : 'none'}>
+        <Link to={'/profile'}>
+          <p>
+            <i className="bi bi-person"></i> Profile
+          </p>
+        </Link>
+        <Link to={'/settings'}>
+          <p>
+            <i className="bi bi-gear-fill"></i> Settings
+          </p>
+        </Link>
+        <Link to={'/log-out'}>
+          <p>
+            <i className="bi bi-box-arrow-right"></i> Log-out
+          </p>
+        </Link>
       </div>
     </div>
   );

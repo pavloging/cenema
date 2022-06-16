@@ -5,7 +5,7 @@ import Home from './layouts/home.jsx';
 import Films from './layouts/films.jsx';
 import Marcet from './layouts/marcet.jsx';
 import Like from './layouts/like.jsx';
-import LogOut from './layouts/logOut.jsx';
+import Login from './layouts/login.jsx';
 import Movie from './layouts/movie.jsx';
 import NoPage from './layouts/noPage.jsx';
 import GetFilms from './untils/getFilms.js';
@@ -21,7 +21,7 @@ function App() {
         <Route path="/films" exact component={Films} />
         <Route path="/marcet" exact component={Marcet} />
         <Route path="/like" exact component={Like} />
-        <Route path="/log-out" exact component={LogOut} />
+        <Route path="/login" exact component={Login} />
         {getFilms.map((el, index) => (
           <Route
             key={el.imdbID + 1}
