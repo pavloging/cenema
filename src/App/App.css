@@ -123,6 +123,30 @@ h5 {
 .panel svg:hover {
   fill: var(--svg-hover-color);
 }
+.searchRes {
+  position: fixed;
+  top: 80px;
+  right: 95px;
+  margin-right: -40px;
+  display: flex;
+  height: 60px;
+  width: 260px;
+  z-index: 100;
+}
+.searchRes div {
+  display: flex;
+  align-items: center;
+}
+.searchRes div img {
+  margin: 5px;
+  height: 48px;
+  border-radius: 5px;
+}
+.searchRes div p {
+  margin: 0;
+  text-decoration: underline;
+  color: var(--font-color) !important;
+}
 .risycle {
   position: relative;
   width: 50px;
@@ -414,4 +438,16 @@ h5 {
 }
 .no-page video {
   border-radius: 15px;
+}
+
+/*Изменения скорлла*/
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--font-color);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--main-color);
 }

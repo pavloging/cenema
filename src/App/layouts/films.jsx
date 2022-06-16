@@ -24,7 +24,7 @@ const Films = () => {
                     to={'films/' + el.imdbID}
                     className="btn btn-primary"
                   >
-                    Go somewhere
+                    Watch now
                   </Link>
                   <LikeSvg film={el} />
                 </div>
