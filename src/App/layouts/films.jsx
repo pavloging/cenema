@@ -1,15 +1,22 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import GetFilms from '../untils/getFilms.js';
 import LikeSvg from '../components/likeSvg.jsx';
+import Pagination from '../components/pagination.jsx';
+import { paginate } from '../untils/paginate.js';
 
 const Films = () => {
+  const [currentPage, setCurrentPage] = useState(1);
   const getFilms = GetFilms('list')[0];
+  const pageSize = 10;
+  const handlePageChange = (pageIndex) => setCurrentPage(pageIndex);
+  const filmCrop = paginate(getFilms, currentPage, pageSize);
   return (
     <>
       <div className="films">
         <div className="films-list d-flex flex-wrap justify-content-center">
           {getFilms[0] !== 'film' ? (
-            getFilms.map((el) => (
+            filmCrop.map((el) => (
               <div
                 key={el.imdbID + 1}
                 className="card m-3"
@@ -43,6 +50,13 @@ const Films = () => {
             </div>
           )}
         </div>
+        <Pagination
+          itemsCount={getFilms.length}
+          pageSize={pageSize}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          onPageChange={handlePageChange}
+        />
       </div>
     </>
   );
