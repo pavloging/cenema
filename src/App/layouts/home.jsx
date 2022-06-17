@@ -43,9 +43,12 @@ const Home = () => {
         </div>
         <div className="poster">
           <img src="/images/mov/movie.webp" alt="movie-img" />
-          <img src="/images/mov/movie1.webp" alt="movie-img" />
           <img src="/images/mov/movie2.webp" alt="movie-img" />
-          <img src="/images/mov/movie3.webp" alt="movie-img" />
+          <img
+            src="/images/mov/movie3.webp"
+            alt="movie-img"
+            className="jellyfish"
+          />
           <img src="/images/mov/movie4.webp" alt="movie-img" />
         </div>
       </div>

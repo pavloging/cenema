@@ -17,52 +17,53 @@ const Nav = () => {
     <div className="nav">
       <div className="nav-first">
         <Link to={'/'} onClick={handleColor}>
-          <svg
-            className={active === '/' ? 'bi-active' : 'bi'}
-            viewBox="0 0 16 16"
-          >
-            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
-            <path d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
-          </svg>
+          <i
+            className={
+              active === '/'
+                ? 'bi-nav-active bi-house-fill'
+                : 'bi-nav bi-house-fill'
+            }
+          ></i>
         </Link>
 
         <Link to={'/films'} onClick={handleColor}>
-          <svg
-            className={active === '/films' ? 'bi-active' : 'bi'}
-            viewBox="0 0 16 16"
-          >
-            <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" />
-          </svg>
+          <i
+            className={
+              active === '/films' ? 'bi-nav-active bi-film' : 'bi-nav bi-film'
+            }
+          ></i>
         </Link>
 
         <Link to={'/marcet'} onClick={handleColor}>
-          <svg
-            className={active === '/marcet' ? 'bi-active' : 'bi'}
-            viewBox="0 0 16 16"
-          >
-            <path d="M5.929 1.757a.5.5 0 1 0-.858-.514L2.217 6H.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h.623l1.844 6.456A.75.75 0 0 0 3.69 15h8.622a.75.75 0 0 0 .722-.544L14.877 8h.623a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1.717L10.93 1.243a.5.5 0 1 0-.858.514L12.617 6H3.383L5.93 1.757zM4 10a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 0 1 1-2 0v-2zm4-1a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1z" />
-          </svg>
+          <i
+            className={
+              active === '/marcet'
+                ? 'bi-nav-active bi-basket2-fill'
+                : 'bi-nav bi-basket2-fill'
+            }
+          ></i>
         </Link>
 
         <Link to={'/like'} onClick={handleColor}>
-          <svg
-            className={active === '/like' ? 'bi-active' : 'bi'}
-            viewBox="0 0 16 16"
-          >
-            <path d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-          </svg>
+          <i
+            className={
+              active === '/like'
+                ? 'bi-nav-active bi-heart-fill'
+                : 'bi-nav bi-heart-fill'
+            }
+          ></i>
         </Link>
       </div>
 
       <div className="nav-last">
         <Link to={'/login'} onClick={handleColor}>
-          <svg
-            className={active === '/login' ? 'bi-active' : 'bi'}
-            viewBox="0 0 16 16"
-          >
-            <path d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z" />
-            <path d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
-          </svg>
+          <i
+            className={
+              active === '/login'
+                ? 'bi-nav-active bi-box-arrow-in-left'
+                : 'bi-nav bi-box-arrow-in-left'
+            }
+          ></i>
         </Link>
       </div>
     </div>

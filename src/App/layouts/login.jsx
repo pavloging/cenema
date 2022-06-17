@@ -14,24 +14,24 @@ const Login = () => {
   const validatorConfig = {
     email: {
       isRequired: {
-        message: 'Электронная почта обязательна для заполнения'
+        message: 'Email is required'
       },
       isEmail: {
-        message: 'Email введен некорректно'
+        message: 'Email entered incorrectly'
       }
     },
     password: {
       isRequired: {
-        message: 'Пароль обязателен для заполнения'
+        message: 'Password is required'
       },
       isCapitalSymbol: {
-        message: 'Пароль должен содержать хотя бы одну заглавную букву'
+        message: 'Password must contain at least one capital letter'
       },
       isContainDigit: {
-        message: 'Пароль должен содержать хотя бы одно число'
+        message: 'Password must contain at least one number'
       },
       min: {
-        message: 'Пароль должен состоять минимум из 8 символов',
+        message: 'Password must be at least 8 characters',
         value: 8
       }
     }
@@ -60,14 +60,14 @@ const Login = () => {
           <h3 className="mb-4">Login</h3>
           <form onSubmit={handleSubmit}>
             <TextField
-              label="Электронная почта"
+              label="Email"
               name="email"
               value={data.email}
               onChange={handleChange}
               error={errors.email}
             />
             <TextField
-              label="Пароль"
+              label="Password"
               type="password"
               name="password"
               value={data.password}

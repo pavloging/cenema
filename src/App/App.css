@@ -10,6 +10,7 @@
   --svg-hover-color: #65b4ae;
   --btn: blanchedalmond;
   --btn-hover: #65b4ae;
+  --transition: 0.4s;
 }
 * {
   margin: 0;
@@ -27,6 +28,7 @@ h4,
 h5 {
   color: var(--font-color) !important;
 }
+
 /* NAV */
 .nav {
   position: fixed;
@@ -35,7 +37,7 @@ h5 {
   justify-content: space-around;
   flex-direction: column;
   width: 60px;
-  height: 100vh;
+  height: 101vh;
   opacity: 0.99;
   z-index: 1;
   background-color: var(--main-color);
@@ -50,8 +52,22 @@ h5 {
 .nav div svg:hover {
   fill: var(--svg-hover-color) !important;
 }
-.bi-active {
-  fill: var(--svg-hover-color) !important;
+.bi-nav {
+  margin: 14px 18px;
+  cursor: pointer;
+  font-size: xx-large;
+  color: var(--svg-color) !important;
+  transition: var(--transition);
+}
+.bi-nav:hover {
+  color: var(--svg-hover-color) !important;
+  transition: var(--transition);
+}
+.bi-nav-active {
+  margin: 14px 18px;
+  cursor: pointer;
+  color: var(--svg-hover-color) !important;
+  font-size: xx-large;
 }
 .nav-first {
   position: absolute;
@@ -66,6 +82,7 @@ h5 {
   position: absolute;
   bottom: 35px;
 }
+
 /* PANEL */
 .panel {
   position: fixed;
@@ -81,34 +98,41 @@ h5 {
   height: 50px;
   border-radius: 50px;
   background-color: var(--main-color) !important;
-  transition: 0.5s;
+  transition: var(--transition);
 }
 .panel .search.active {
   width: 260px;
-  transition: 0.5s;
+  transition: var(--transition);
 }
 .panel .search .icon {
   cursor: pointer;
 }
 .bi-github {
   width: 28px;
-  fill: var(--main-color) !important;
+  color: var(--main-color) !important;
   position: absolute;
-  left: -52px;
+  top: -23px;
+  left: -76px;
+  font-size: xxx-large;
   transform: translate(10px, 10px);
+  transition: var(--transition);
 }
 .bi-github:hover {
-  fill: var(--svg-hover-color) !important;
+  color: var(--svg-hover-color) !important;
+  transition: var(--transition);
 }
 .bi-search {
-  width: 28px;
-  fill: var(--svg-color) !important;
+  color: var(--svg-color) !important;
   position: absolute;
-  left: 2px;
+  left: -1px;
+  top: -10px;
+  font-size: xx-large;
   transform: translate(10px, 10px);
+  transition: var(--transition);
 }
 .bi-search:hover {
-  fill: var(--svg-hover-color);
+  color: var(--svg-hover-color) !important;
+  transition: var(--transition);
 }
 .panel .search form .input {
   display: none;
@@ -176,7 +200,7 @@ h5 {
   background-color: var(--main-color);
   border-radius: 10px;
   padding: 5px;
-  transition: 0.5s;
+  transition: var(--transition);
   animation: dropdown ease-in-out 0.4s;
 }
 .dropdown::before {
@@ -195,12 +219,12 @@ h5 {
 .dropdown p {
   padding: 15px;
   margin: 5px 0;
-  transition: 0.5s;
+  transition: var(--transition);
 }
 .dropdown p:hover {
   cursor: pointer;
   color: var(--font-color-white) !important;
-  transition: 0.5s;
+  transition: var(--transition);
 }
 .none {
   display: none;
@@ -214,6 +238,7 @@ h5 {
     transform: rotate3d(1, 1, 1, 0deg);
   }
 }
+
 /* HOME */
 .home {
   background: linear-gradient(to left, transparent, var(--main-color)),
@@ -263,7 +288,7 @@ h5 {
   text-align: center;
   display: inline-block;
   margin-top: 3vh;
-  padding: 15px 30px;
+  padding: 5% 10%;
   color: #181a1d !important;
   border-radius: 10px;
   background-color: var(--btn);
@@ -290,6 +315,7 @@ h5 {
   justify-content: flex-end;
   height: 100%;
   padding: 10vh;
+  margin-right: 10%;
 }
 .lable {
   display: flex;
@@ -314,12 +340,12 @@ h5 {
   margin: 0 20px;
   border-radius: 15px;
   width: 12vw;
-  transition: 0.5s;
+  transition: var(--transition);
 }
 .poster img:hover {
   width: 13vw;
   transform: rotate(5deg);
-  transition: 0.5s;
+  transition: var(--transition);
 }
 @keyframes lamp {
   0% {
@@ -349,6 +375,7 @@ h5 {
     height: 100px;
   }
 }
+
 /* FILMS */
 .films {
   height: 100vh;
@@ -462,6 +489,24 @@ h5 {
   align-items: center;
   height: 100vh;
 }
+.bi-heart-fill {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 14px 18px;
+  cursor: pointer;
+  color: red;
+  font-size: xx-large;
+}
+.bi-heart {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 14px 18px;
+  cursor: pointer;
+  color: var(--bs-blue);
+  font-size: xx-large;
+}
 
 /* Movie */
 .movie {
@@ -478,10 +523,8 @@ h5 {
   flex-direction: column;
   align-items: center;
 }
+
 /* MARCKET */
-/* .marcet {
-  background-color: #05524b;
-} */
 .card-container {
   display: flex;
   align-items: center;
@@ -515,11 +558,12 @@ h5 {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.4s, box-shadow 0.4s;
+  transition: var(--transition);
 }
 .card-container .card:hover .box {
-  transform: translateY(-50px);
   box-shadow: 0 40px 70px rgba(0, 0, 0, 0.5);
+  transform: translateY(-50px);
+  transition: var(--transition);
 }
 .card-container .card .box .content {
   padding: 20px;
@@ -639,4 +683,46 @@ h5 {
 }
 ::-webkit-scrollbar-track {
   background-color: var(--main-color);
+}
+
+/* MEDIA */
+@media all and (max-device-width: 1440px) {
+  .home .menu-info {
+    width: 25vw;
+  }
+  .home .movies .poster .jellyfish {
+    display: none;
+  }
+}
+@media all and (max-device-width: 992px) {
+  .home .menu-info {
+    width: 32vw;
+  }
+  .home .movies .poster {
+    margin-right: -24%;
+  }
+}
+@media all and (max-device-width: 767px) {
+  body {
+    width: 100.5%;
+  }
+  .home {
+    background-position: center;
+  }
+  .home .menu-info {
+    margin-bottom: -90vh;
+    width: 92.1%;
+  }
+  .home .menu-info .info h5 {
+    width: 45vw;
+  }
+  .home .menu-info .info a {
+    padding: 3% 6%;
+  }
+  .home .movies .poster img {
+    width: 20vw;
+  }
+  .home .movies .poster img:hover {
+    width: 22vw;
+  }
 }
