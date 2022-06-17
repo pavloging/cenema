@@ -514,6 +514,7 @@ h5 {
   flex-direction: column;
   align-items: center;
   margin-left: 60px;
+  padding: 20px;
 }
 .movie h1 {
   color: var(--font-color) !important;
@@ -524,7 +525,10 @@ h5 {
   align-items: center;
 }
 
-/* MARCKET */
+/* MARKET */
+.market {
+  margin-left: 60px;
+}
 .card-container {
   display: flex;
   align-items: center;
@@ -657,6 +661,9 @@ h5 {
   width: 70%;
   margin-bottom: 10vh;
 }
+.col-md-6 {
+  margin-left: 30px;
+}
 
 /* NoPage */
 .no-page {
@@ -664,6 +671,7 @@ h5 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-left: 60px;
   height: 100vh;
 }
 .no-page h1 {
@@ -703,9 +711,6 @@ h5 {
   }
 }
 @media all and (max-device-width: 767px) {
-  body {
-    width: 100.5%;
-  }
   .home {
     background-position: center;
   }
@@ -724,5 +729,8 @@ h5 {
   }
   .home .movies .poster img:hover {
     width: 22vw;
+  }
+  .movie iframe {
+    height: 600px !important;
   }
 }

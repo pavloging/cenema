@@ -11,8 +11,8 @@ const Movie = ({ film, youtube }) => {
       <h4>Rate: {film.imdbRating}</h4>
       <h5>Plot: {film.Plot}</h5>
       <iframe
-        width="1120"
-        height="630"
+        width="90%"
+        height="900px"
         src={youtube}
         title="YouTube video player"
         frameBorder="0"

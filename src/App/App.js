@@ -3,7 +3,7 @@ import Nav from './components/nav.jsx';
 import Panel from './components/panel.jsx';
 import Home from './layouts/home.jsx';
 import Films from './layouts/films.jsx';
-import Marcet from './layouts/marcet.jsx';
+import Market from './layouts/market.jsx';
 import Like from './layouts/like.jsx';
 import Login from './layouts/login.jsx';
 import Movie from './layouts/movie.jsx';
@@ -19,7 +19,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/films" exact component={Films} />
-        <Route path="/marcet" exact component={Marcet} />
+        <Route path="/market" exact component={Market} />
         <Route path="/like" exact component={Like} />
         <Route path="/login" exact component={Login} />
         {getFilms.map((el, index) => (

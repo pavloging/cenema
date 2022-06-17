@@ -34,10 +34,10 @@ const Nav = () => {
           ></i>
         </Link>
 
-        <Link to={'/marcet'} onClick={handleColor}>
+        <Link to={'/market'} onClick={handleColor}>
           <i
             className={
-              active === '/marcet'
+              active === '/market'
                 ? 'bi-nav-active bi-basket2-fill'
                 : 'bi-nav bi-basket2-fill'
             }

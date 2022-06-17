@@ -1,6 +1,6 @@
-const Marcet = () => {
+const Market = () => {
   return (
-    <div className="marcet">
+    <div className="market">
       <div className="card-container">
         <div className="card">
           <div className="box">
@@ -114,4 +114,4 @@ const Marcet = () => {
   );
 };
 
-export default Marcet;
+export default Market;
