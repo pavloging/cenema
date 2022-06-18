@@ -24,32 +24,36 @@ const Home = () => {
             Watch now
           </a>
         </div>
-      </div>
-      <div className="movies">
-        <div className="lable">
-          <h1>Live mov</h1>
-          <div>
-            <div className="light-lamp">
-              <img
-                className="lamp"
-                src="/images/lamp/lamp.png"
-                alt="lamp-img"
-              />
+        <div className="movies">
+          <div className="lable">
+            <h1>Live mov</h1>
+            <div>
+              <div className="light-lamp">
+                <img
+                  className="lamp"
+                  src="/images/lamp/lamp.png"
+                  alt="lamp-img"
+                />
+              </div>
+              <img className="i" src="/images/lamp/i.png" alt="lamp-img" />
             </div>
-            <img className="i" src="/images/lamp/i.png" alt="lamp-img" />
-          </div>
 
-          <h1>es</h1>
-        </div>
-        <div className="poster">
-          <img src="/images/mov/movie.webp" alt="movie-img" />
-          <img src="/images/mov/movie2.webp" alt="movie-img" />
-          <img
-            src="/images/mov/movie3.webp"
-            alt="movie-img"
-            className="jellyfish"
-          />
-          <img src="/images/mov/movie4.webp" alt="movie-img" />
+            <h1>es</h1>
+          </div>
+          <div className="poster">
+            <img src="/images/mov/movie.webp" alt="movie-img" />
+            <img src="/images/mov/movie2.webp" alt="movie-img" />
+            <img
+              src="/images/mov/movie3.webp"
+              alt="movie-img"
+              className="jellyfish"
+            />
+            <img
+              src="/images/mov/movie4.webp"
+              alt="movie-img"
+              className="green"
+            />
+          </div>
         </div>
       </div>
     </div>

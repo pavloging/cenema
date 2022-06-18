@@ -312,17 +312,16 @@ h5 {
 }
 .movies {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  flex-direction: column;
-  align-content: flex-end;
-  justify-content: flex-end;
-  height: 100%;
-  padding: 10vh;
-  margin-right: 10%;
+  position: absolute;
+  left: 24vw;
+  top: 50vh;
 }
 .lable {
   display: flex;
   align-items: flex-end;
+  margin-top: -20%;
 }
 .lable img {
   width: 6vh;
@@ -338,17 +337,23 @@ h5 {
   margin-top: 12px;
   animation: i 0.8s ease-in-out infinite;
 }
+.poster {
+  display: flex;
+}
 .poster img {
   cursor: pointer;
   margin: 0 20px;
   border-radius: 15px;
-  width: 12vw;
+  height: 26vh;
   transition: var(--transition);
 }
 .poster img:hover {
-  width: 13vw;
+  height: 28vh;
   transform: rotate(5deg);
   transition: var(--transition);
+}
+.jellyfish {
+  width: 26%;
 }
 @keyframes lamp {
   0% {
@@ -701,16 +706,13 @@ h5 {
   .home .menu-info {
     width: 25vw;
   }
-  .home .movies .poster .jellyfish {
+  .jellyfish {
     display: none;
   }
 }
 @media all and (max-device-width: 992px) {
   .home .menu-info {
     width: 32vw;
-  }
-  .home .movies .poster {
-    margin-right: -24%;
   }
   .nav {
     width: var(--margin-nav-media);
@@ -719,6 +721,9 @@ h5 {
   .menu-info,
   .market {
     margin-left: var(--margin-nav-media);
+  }
+  .green {
+    display: none;
   }
 }
 @media all and (max-device-width: 767px) {
@@ -749,8 +754,14 @@ h5 {
     opacity: 0.9;
     z-index: 1;
   }
-  .home .movies .poster img {
+  .poster img {
     display: none;
+  }
+  .movies {
+    padding: 10%;
+    position: relative;
+    left: auto;
+    top: auto;
   }
   .movie iframe {
     height: 600px !important;
