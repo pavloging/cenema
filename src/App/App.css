@@ -43,9 +43,9 @@ h5 {
   opacity: 0.99;
   z-index: 1;
   background-color: var(--main-color);
-  border-right: 1px solid skyblue;
+  /* border-right: 1px solid skyblue;
   border-image: linear-gradient(to right top, blue, #91fff6, blue);
-  border-image-slice: 1;
+  border-image-slice: 1; */
 }
 .nav div svg {
   width: 28px;
@@ -80,7 +80,7 @@ h5 {
   align-items: center;
 }
 .nav-first a {
-  margin-bottom: 10vh;
+  margin-bottom: 150%;
 }
 .nav-last {
   position: absolute;
@@ -724,26 +724,26 @@ h5 {
   .home {
     background: center;
     background-size: cover;
-    margin-left: var(--margin-nav);
   }
   .home .menu-info {
     opacity: 0.85;
-    margin-left: 0;
     padding: 5%;
-    width: 95%;
+    width: 92%;
     border-right: 0;
     border-top: 0;
     border-top-right-radius: 0;
     height: 100vh;
   }
+  .home .menu-info .info h4,
   .home .menu-info .info h5 {
-    width: 45vw;
+    font-size: medium;
+    width: 65vw;
   }
   .home .menu-info .info a {
     padding: 3% 6%;
   }
   .lable {
-    width: 100%;
+    width: 85%;
     z-index: 1;
   }
   .home .movies .poster img {
