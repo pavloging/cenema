@@ -16,7 +16,10 @@ const LikeSvg = ({ film }) => {
     <>
       {myLike === true ||
       JSON.parse(localStorage.getItem('obj-' + film.imdbID)) ? (
-        <i className="bi bi-heart-fill" onClick={onFavoriteLikeRemove}></i>
+        <i
+          className="bi bi-heart-fill bi-heart-id"
+          onClick={onFavoriteLikeRemove}
+        ></i>
       ) : (
         <i className="bi bi-heart" onClick={onFavoriteLikeAdd}></i>
       )}

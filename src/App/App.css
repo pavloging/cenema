@@ -10,6 +10,8 @@
   --svg-hover-color: #65b4ae;
   --btn: blanchedalmond;
   --btn-hover: #65b4ae;
+  --margin-nav: 5%;
+  --margin-nav-media: 8%;
   --transition: 0.4s;
 }
 * {
@@ -36,8 +38,8 @@ h5 {
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  width: 60px;
-  height: 101vh;
+  width: 5%;
+  height: 100vh;
   opacity: 0.99;
   z-index: 1;
   background-color: var(--main-color);
@@ -71,9 +73,11 @@ h5 {
 }
 .nav-first {
   position: absolute;
+  width: 100%;
   top: 100px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .nav-first a {
   margin-bottom: 10vh;
@@ -255,14 +259,13 @@ h5 {
   width: 20vw;
   opacity: 0.9;
   background-color: var(--main-color);
-  margin-left: 60px;
+  margin-left: var(--margin-nav);
   border-top-right-radius: 20px;
   border-top: 1px #4f92c8 solid;
   border-right: 2px #4f92c8 solid;
 }
 .info {
-  margin-top: 15px;
-  margin-left: 15px;
+  padding: 10%;
 }
 .info h1,
 .info h4,
@@ -378,7 +381,7 @@ h5 {
 /* FILMS */
 .films {
   height: 100vh;
-  margin-left: 60px;
+  margin-left: var(--margin-nav);
 }
 .films-list {
   margin: 0 12%;
@@ -488,7 +491,7 @@ h5 {
   align-items: center;
   height: 100vh;
 }
-.bi-heart-fill {
+.bi-heart-id {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -512,7 +515,7 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 60px;
+  margin-left: var(--margin-nav);
   padding: 20px;
 }
 .movie h1 {
@@ -526,7 +529,7 @@ h5 {
 
 /* MARKET */
 .market {
-  margin-left: 60px;
+  margin-left: var(--margin-nav);
 }
 .card-container {
   display: flex;
@@ -670,7 +673,7 @@ h5 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-left: 60px;
+  margin-left: var(--margin-nav);
   height: 100vh;
 }
 .no-page h1 {
@@ -708,14 +711,30 @@ h5 {
   .home .movies .poster {
     margin-right: -24%;
   }
+  .nav {
+    width: var(--margin-nav-media);
+  }
+  .films,
+  .menu-info,
+  .market {
+    margin-left: var(--margin-nav-media);
+  }
 }
 @media all and (max-device-width: 767px) {
   .home {
-    background-position: center;
+    background: center;
+    background-size: cover;
+    margin-left: var(--margin-nav);
   }
   .home .menu-info {
-    margin-bottom: -90vh;
-    width: 92.1%;
+    opacity: 0.85;
+    margin-left: 0;
+    padding: 5%;
+    width: 95%;
+    border-right: 0;
+    border-top: 0;
+    border-top-right-radius: 0;
+    height: 100vh;
   }
   .home .menu-info .info h5 {
     width: 45vw;
@@ -723,11 +742,12 @@ h5 {
   .home .menu-info .info a {
     padding: 3% 6%;
   }
-  .home .movies .poster img {
-    width: 20vw;
+  .lable {
+    width: 100%;
+    z-index: 1;
   }
-  .home .movies .poster img:hover {
-    width: 22vw;
+  .home .movies .poster img {
+    display: none;
   }
   .movie iframe {
     height: 600px !important;
