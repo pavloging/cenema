@@ -745,10 +745,14 @@ h5 {
   }
   .lable {
     width: 85%;
+    opacity: 0.9;
     z-index: 1;
   }
   .home .movies .poster img {
     display: none;
+  }
+  .movies {
+    height: 90%;
   }
   .movie iframe {
     height: 600px !important;
