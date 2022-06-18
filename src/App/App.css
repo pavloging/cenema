@@ -108,7 +108,6 @@ h5 {
   cursor: pointer;
 }
 .bi-github {
-  width: 28px;
   color: var(--main-color) !important;
   position: absolute;
   top: -23px;
