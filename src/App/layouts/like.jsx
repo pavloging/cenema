@@ -20,7 +20,7 @@ const Like = () => {
                 className="card m-3"
                 style={{ width: '18rem' }}
               >
-                <img src={el.Poster} className="card-img-top" alt="..." />
+                <img src={el.Poster} className="card-img-top" alt="Poster" />
                 <div className="card-body">
                   <h5 className="card-title">{el.Title}</h5>
                   <p className="card-text">{el.Genre}</p>

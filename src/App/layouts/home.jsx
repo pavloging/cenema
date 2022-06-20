@@ -10,50 +10,52 @@ const Home = () => {
         backgroundImage: `url(${index.img})`
       }}
     >
-      <div className="menu-info">
-        <div className="info">
-          <p>&middot; Live</p>
-          <h1>{film.Title}</h1>
-          <h4>Genre: {film.Genre}</h4>
-          <h4>Year: {film.Year}</h4>
-          <h4>Rate: {film[0] !== 'film' ? film.Ratings[0].Value : ''}</h4>
-          <h4>Time: {film.Runtime}</h4>
+      <div className="home__info">
+        <p className="home__paragraph">&middot; Live</p>
+        <h1 className="home__film-title">{film.Title}</h1>
+        <h3 className="home__child-title">Genre: {film.Genre}</h3>
+        <h3 className="home__child-title">Year: {film.Year}</h3>
+        <h3 className="home__child-title">
+          Rate: {film[0] !== 'film' ? film.Ratings[0].Value : ''}
+        </h3>
+        <h3 className="home__child-title">Time: {film.Runtime}</h3>
 
-          <h5>{film.Plot}</h5>
-          <a target="_blank" rel="noreferrer" href={index.youtube}>
-            Watch now
-          </a>
+        <h4 className="home__description-title">{film.Plot}</h4>
+        <a
+          className="home__link"
+          target="_blank"
+          rel="noreferrer"
+          href={index.youtube}
+        >
+          Watch now
+        </a>
+      </div>
+      <div className="home__movies">
+        <div className="home__mov-title">
+          <h1>Live mov</h1>
+          <ul className="home__list">
+            <li>
+              <img
+                className="home__item-lamp"
+                src="/images/lamp/lamp.png"
+                alt="lamp-img"
+              />
+            </li>
+            <li>
+              <img
+                className="home__item-i"
+                src="/images/lamp/i.png"
+                alt="lamp-img"
+              />
+            </li>
+          </ul>
+          <h1>es</h1>
         </div>
-        <div className="movies">
-          <div className="lable">
-            <h1>Live mov</h1>
-            <div>
-              <div className="light-lamp">
-                <img
-                  className="lamp"
-                  src="/images/lamp/lamp.png"
-                  alt="lamp-img"
-                />
-              </div>
-              <img className="i" src="/images/lamp/i.png" alt="lamp-img" />
-            </div>
-
-            <h1>es</h1>
-          </div>
-          <div className="poster">
-            <img src="/images/mov/movie.webp" alt="movie-img" />
-            <img src="/images/mov/movie2.webp" alt="movie-img" />
-            <img
-              src="/images/mov/movie3.webp"
-              alt="movie-img"
-              className="jellyfish"
-            />
-            <img
-              src="/images/mov/movie4.webp"
-              alt="movie-img"
-              className="green"
-            />
-          </div>
+        <div className="home__poster">
+          <img src="/images/mov/movie.webp" alt="movie-img" />
+          <img src="/images/mov/movie2.webp" alt="movie-img" />
+          <img src="/images/mov/movie3.webp" alt="movie-img" />
+          <img src="/images/mov/movie4.webp" alt="movie-img" />
         </div>
       </div>
     </div>

@@ -13,7 +13,7 @@ import GetFilms from './untils/getFilms.js';
 function App() {
   const [getFilms, getYoutube] = GetFilms('list');
   return (
-    <div>
+    <>
       <Nav />
       <Panel />
       <Switch>
@@ -32,7 +32,7 @@ function App() {
 
         <Route path="/" component={NoPage} />
       </Switch>
-    </div>
+    </>
   );
 }
 
