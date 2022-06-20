@@ -254,7 +254,6 @@ h4 {
   -o-background-size: cover;
   background-size: cover;
 }
-
 .home__info {
   width: 35%;
   margin-left: var(--margin-nav);
@@ -264,7 +263,7 @@ h4 {
   opacity: var(--opacity);
 }
 .home__paragraph,
-.home__filme-title,
+.home__film-title,
 .home__child-title,
 .home__description-title,
 .home__link {
@@ -718,9 +717,21 @@ h4 {
   .home__info {
     width: 100%;
     margin-left: 0;
-    padding: 20% 10%;
+    padding: 16% 10%;
   }
-  .home__info a {
+  .home__paragraph {
+    font-size: 1rem;
+  }
+  .home__film-title {
+    font-size: 1.5rem;
+  }
+  .home__child-title {
+    font-size: 1.3rem;
+  }
+  .home__description-title {
+    font-size: 1.15rem;
+  }
+  .home__link {
     padding: 3% 5%;
   }
   .bi-github {
