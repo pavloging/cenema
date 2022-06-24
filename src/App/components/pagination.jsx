@@ -26,10 +26,10 @@ const Pagination = ({
 
   return (
     <nav className="paginate" aria-label="Page navigation example">
-      <ul className="pagination">
-        <li className="page-item">
+      <ul className="paginate__items-list pagination">
+        <li className="paginate__item-arrow page-item">
           <button
-            className="page-link"
+            className="paginate__link page-link"
             href="#"
             aria-label="Previous"
             onClick={onPageChangeIncrement}
@@ -39,15 +39,21 @@ const Pagination = ({
         </li>
         {pages.map((page) => (
           <li
-            className={'page-item' + (page === currentPage ? ' active' : '')}
+            className={
+              'paginate__item page-item' +
+              (page === currentPage ? ' active' : '')
+            }
             key={'page_' + page}
           >
-            <button className="page-link" onClick={() => onPageChange(page)}>
+            <button
+              className="paginate__item-link page-link"
+              onClick={() => onPageChange(page)}
+            >
               {page}
             </button>
           </li>
         ))}
-        <li className="page-item">
+        <li className="paginate__item-arrow page-item">
           <button
             className="page-link"
             href="#"

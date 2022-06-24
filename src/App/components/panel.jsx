@@ -12,8 +12,8 @@ const Panel = () => {
 
   return (
     <div className="panel">
-      <div className={icon ? 'search active' : 'search'}>
-        <div className="icon-github">
+      <div className={icon ? 'panel__search active' : 'panel__search'}>
+        <div className="panel__icon-github">
           <a
             target="_blank"
             rel="noreferrer"
@@ -23,16 +23,16 @@ const Panel = () => {
           </a>
         </div>
 
-        <div className="icon" onClick={hangleIcon}>
+        <div className="panel__icon-search" onClick={hangleIcon}>
           <i className="bi bi-search"></i>
         </div>
 
-        <form className="d-flex" role="search">
+        <form className="panel__form" role="search">
           <input
             className={
               icon
-                ? 'input active form-control me-2'
-                : 'input form-control me-2'
+                ? 'panel__input input active form-control'
+                : 'panel__input input form-control'
             }
             type="search"
             placeholder="Search"
@@ -41,7 +41,7 @@ const Panel = () => {
           />
         </form>
       </div>
-      <div className="searchRes">
+      <div className="panel__search-hidden-result">
         {1 < getFilms.length
           ? getFilms.map((el) => {
               return el.Title.toLowerCase().trim() ===
@@ -55,22 +55,26 @@ const Panel = () => {
             })
           : null}
       </div>
-      <div className="risycle" onClick={hangleDropDown}>
-        <img src="/images/mary.jpg" alt="Profile-img" />
+      <div className="panel__icon-profile" onClick={hangleDropDown}>
+        <img
+          className="panel__icon-profile-img"
+          src="/images/mary.jpg"
+          alt="Profile-img"
+        />
       </div>
-      <div className={dropDown ? 'dropdown' : 'none'}>
-        <Link to={'/profile'}>
-          <p>
+      <div className={dropDown ? 'panel__dropdown' : 'panel__none'}>
+        <Link className="panel__profile-link" to={'/profile'}>
+          <p className="panel__profile-paragraph">
             <i className="bi bi-person"></i> Profile
           </p>
         </Link>
-        <Link to={'/settings'}>
-          <p>
+        <Link className="panel__profile-link" to={'/settings'}>
+          <p className="panel__profile-paragraph">
             <i className="bi bi-gear-fill"></i> Settings
           </p>
         </Link>
-        <Link to={'/log-out'}>
-          <p>
+        <Link className="panel__profile-link" to={'/log-out'}>
+          <p className="panel__profile-paragraph">
             <i className="bi bi-box-arrow-right"></i> Log-out
           </p>
         </Link>

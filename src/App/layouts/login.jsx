@@ -55,9 +55,9 @@ const Login = () => {
   };
   return (
     <div className="login">
-      <div className="row">
-        <div className="col-md-6 offset-md-3 shadow p-4">
-          <h3 className="mb-4">Login</h3>
+      <div className="login__container">
+        <div className="login__box">
+          <h3 className="login__title">Login</h3>
           <form onSubmit={handleSubmit}>
             <TextField
               label="Email"

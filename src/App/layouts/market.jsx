@@ -1,109 +1,106 @@
 const Market = () => {
   return (
     <div className="market">
-      <div className="card-container">
-        <div className="card">
-          <div className="box">
-            <div className="content">
-              <div className="icon">
+      <div className="market__container">
+        <div className="market__card">
+          <div className="market__box">
+            <div className="market__content">
+              <div className="market__icon">
                 <i className="bi bi-battery"></i>
               </div>
-              <h3>Basic</h3>
-              <h4>
-                <sup>$</sup>25
+              <h3 className="market__title">Basic</h3>
+              <h4 className="market__price">
+                <sup className="market__price-dollar">$</sup>25
               </h4>
-
-              <ul>
-                <li>
+              <ul className="market__items-list">
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;25 Top Films
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;Add favorite
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;Online movies
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-minus"></i>
                   &nbsp;Live Support
                 </li>
               </ul>
-              <a href="#" rel="noreferrer">
+              <a className="market__link" href="/market" rel="noreferrer">
                 Order Now
               </a>
             </div>
           </div>
         </div>
 
-        <div className="card">
-          <div className="box">
-            <div className="content">
-              <div className="icon">
+        <div className="market__card">
+          <div className="market__box">
+            <div className="market__content">
+              <div className="market__icon">
                 <i className="bi bi-battery-half"></i>
               </div>
-              <h3>Standart</h3>
-              <h4>
-                <sup>$</sup>50
+              <h3 className="market__title">Standart</h3>
+              <h4 className="market__price">
+                <sup className="market__price-dollar">$</sup>50
               </h4>
-
-              <ul>
-                <li>
+              <ul className="market__items-list">
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;50 Top Films
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;Add favorite
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;Online movies
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-minus"></i>
                   &nbsp;Live Support
                 </li>
               </ul>
-              <a href="#" rel="noreferrer">
+              <a className="market__link" href="/market" rel="noreferrer">
                 Order Now
               </a>
             </div>
           </div>
         </div>
 
-        <div className="card">
-          <div className="box">
-            <div className="content">
-              <div className="icon">
-                <i className="bi bi-battery-charging"></i>
+        <div className="market__card">
+          <div className="market__box">
+            <div className="market__content">
+              <div className="market__icon">
+                <i className="market__bi-battery-charging bi bi-battery-charging"></i>
               </div>
-              <h3>Premium</h3>
-              <h4>
-                <sup>$</sup>100
+              <h3 className="market__title">Premium</h3>
+              <h4 className="market__price">
+                <sup className="market__price-dollar">$</sup>100
               </h4>
-
-              <ul>
-                <li>
+              <ul className="market__items-list">
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;95 Top Films
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;Add favorite
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;Online movies
                 </li>
-                <li>
+                <li className="market__item">
                   <i className="bi bi-patch-check"></i>
                   &nbsp;Live Support
                 </li>
               </ul>
-              <a href="#" rel="noreferrer">
+              <a className="market__link" href="/market" rel="noreferrer">
                 Order Now
               </a>
             </div>

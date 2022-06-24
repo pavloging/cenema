@@ -12,22 +12,22 @@ const Like = () => {
   return (
     <>
       <div className="films">
-        <div className="films-list d-flex flex-wrap justify-content-center">
+        <div className="films__list">
           {liked.length !== 0 ? (
             liked.map((el) => (
-              <div
-                key={el.imdbID + 1}
-                className="card m-3"
-                style={{ width: '18rem' }}
-              >
-                <img src={el.Poster} className="card-img-top" alt="Poster" />
-                <div className="card-body">
-                  <h5 className="card-title">{el.Title}</h5>
-                  <p className="card-text">{el.Genre}</p>
+              <div key={el.imdbID + 1} className="films__card card">
+                <img
+                  src={el.Poster}
+                  className="films__card-img card-img-top"
+                  alt="Poster"
+                />
+                <div className="films__card-body card-body">
+                  <h5 className="films__card-title card-title">{el.Title}</h5>
+                  <p className="films__card-text card-text">{el.Genre}</p>
                   <Link
                     rel="noreferrer"
                     to={'/films/' + el.imdbID}
-                    className="btn btn-primary"
+                    className="films__card-btn btn btn-primary"
                   >
                     Watch now
                   </Link>
@@ -36,7 +36,7 @@ const Like = () => {
               </div>
             ))
           ) : (
-            <h4 className="not-favorite">Nothing to favorite :-(</h4>
+            <h4 className="films__not-favorite">Nothing to favorite :-(</h4>
           )}
         </div>
       </div>
