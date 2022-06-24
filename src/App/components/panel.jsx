@@ -30,9 +30,7 @@ const Panel = () => {
         <form className="panel__form" role="search">
           <input
             className={
-              icon
-                ? 'panel__input input active form-control'
-                : 'panel__input input form-control'
+              icon ? 'input active form-control' : 'input form-control'
             }
             type="search"
             placeholder="Search"

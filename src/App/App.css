@@ -64,6 +64,7 @@ h4 {
   color: var(--svg-color) !important;
   cursor: pointer;
   transition: var(--transition);
+  z-index: 200;
 }
 .bi-nav:hover {
   color: var(--svg-hover-color) !important;
@@ -158,6 +159,10 @@ h4 {
 }
 .panel__form .input.active {
   display: block;
+  position: relative;
+  top: 7px;
+  background-color: var(--main-color);
+  box-shadow: none;
 }
 .panel svg:hover {
   fill: var(--svg-hover-color) !important;
@@ -786,60 +791,46 @@ h4 {
   .login__box {
     margin: 25px;
   }
-
-  /*
- * Made by Erik Terwan
- * 24th of November 2015
- * MIT License
- *
- *
- * If you are thinking of using this in
- * production code, beware of the browser
- * prefixes.
- */
+  /* burger */
   .nav__burger {
-    display: block;
     position: fixed;
-    top: 42px;
+    top: 38px;
     left: 36px;
+    display: block;
     z-index: 100;
   }
-
   .nav__toggle {
     display: block;
-    z-index: 1;
     -webkit-user-select: none;
     user-select: none;
+    z-index: 1;
   }
-
   .nav__toggle a {
-    text-decoration: none;
     color: #232323;
+    text-decoration: none;
     transition: color 0.3s ease;
   }
-
   .nav__toggle a:hover {
     color: tomato;
   }
-
   .nav__toggle input {
-    display: block;
-    width: 40px;
-    height: 32px;
     position: absolute;
     top: -7px;
     left: -5px;
+    display: block;
+    width: 40px;
+    height: 32px;
     cursor: pointer;
     opacity: 0;
     z-index: 2;
     -webkit-touch-callout: none;
   }
   .nav__toggle span {
+    position: relative;
     display: block;
     width: 33px;
     height: 4px;
     margin-bottom: 5px;
-    position: relative;
     background: var(--svg-color);
     border-radius: 3px;
     z-index: 1;
