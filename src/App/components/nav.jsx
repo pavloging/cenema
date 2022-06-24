@@ -23,7 +23,7 @@ const Nav = () => {
 
   return (
     <div className="nav">
-      <div className={burger ? 'nav__section' : 'nav__section-none'}>
+      <div className={burger ? 'nav__section-none' : 'nav__section'}>
         <div className="nav__first-section">
           <Link to={'/'} onClick={handleColor}>
             <i

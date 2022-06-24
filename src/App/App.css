@@ -95,6 +95,11 @@ h4 {
   align-items: center;
   width: 100%;
 }
+.bi-box-arrow-in-left {
+  position: relative;
+  left: 5px;
+  font-size: 2.3rem;
+}
 .nav__burger {
   display: none;
 }
@@ -457,9 +462,6 @@ h4 {
 }
 
 /* MARKET */
-.market {
-  margin-left: var(--margin-nav);
-}
 .market__container {
   display: flex;
   align-items: center;
@@ -488,7 +490,7 @@ h4 {
   justify-content: center;
   align-items: center;
   left: 20px;
-  width: 88%;
+  width: 87%;
   background-color: var(--main-color);
   border: 2px solid #1e1f23;
   border-radius: 15px;
@@ -537,6 +539,7 @@ h4 {
 }
 .market__items-list {
   position: relative;
+  right: 10px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -762,36 +765,6 @@ h4 {
     padding: 1rem;
     font-size: 2rem;
   }
-  .home__movies {
-    display: none;
-  }
-  .home__info {
-    width: 100%;
-    margin-left: 0;
-    padding: 16% 10%;
-  }
-  .home__paragraph {
-    font-size: 1rem;
-  }
-  .home__film-title {
-    font-size: 1.5rem;
-  }
-  .home__child-title {
-    font-size: 1.3rem;
-  }
-  .home__description-title {
-    font-size: 1.15rem;
-  }
-  .home__link {
-    padding: 3% 5%;
-  }
-  .bi-github {
-    color: var(--svg-color) !important;
-  }
-  .login__box {
-    margin: 25px;
-  }
-  /* burger */
   .nav__burger {
     position: fixed;
     top: 38px;
@@ -855,5 +828,53 @@ h4 {
   }
   .nav__toggle input:checked ~ span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
+  }
+  .panel__search-hidden-result {
+    top: 70px;
+    left: 38px;
+    z-index: 100;
+    width: 120px;
+    height: 35px;
+  }
+  .home__movies {
+    display: none;
+  }
+  .home__info {
+    width: 100%;
+    margin-left: 0;
+    padding: 16% 10%;
+  }
+  .home__paragraph {
+    font-size: 1rem;
+  }
+  .home__film-title {
+    font-size: 1.5rem;
+  }
+  .home__child-title {
+    font-size: 1.3rem;
+  }
+  .home__description-title {
+    font-size: 1.15rem;
+  }
+  .home__link {
+    padding: 3% 5%;
+  }
+  .bi-github {
+    color: var(--svg-color) !important;
+  }
+  .login__box {
+    margin: 25px;
+  }
+  .market__card {
+    min-width: 260px;
+    height: 450px;
+    margin: 50px;
+  }
+  .market__icon {
+    width: 60px;
+    height: 60px;
+  }
+  .market__link {
+    margin-top: 0;
   }
 }
