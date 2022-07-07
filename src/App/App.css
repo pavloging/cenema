@@ -605,6 +605,14 @@ h4 {
 .login__title {
   margin-bottom: 1.5rem !important;
 }
+.login__sing-paragraf {
+  cursor: pointer;
+  color: var(--bs-primary) !important;
+}
+.login_register-radio div {
+  display: inline-block;
+  margin-right: 1.5rem;
+}
 
 /* NoPage */
 .no-page {
