@@ -1,22 +1,105 @@
 import { useState } from 'react';
-import Field from '../components/field';
+import Field from '../components/field.jsx';
 
 const Login = () => {
   const [login, setLogin] = useState(true);
-  const [data, setData] = useState({ email: '', password: '' });
+  const [data, setData] = useState({
+    email: '',
+    password: '',
+    date: ''
+  });
+  const [dataErr, setDataErr] = useState({
+    email: 'Email is required',
+    password: 'Password is required',
+    date: 'Date is required'
+  });
+  const [agreement, setAgreement] = useState(false);
 
   const handleChange = ({ target }) => {
     setData((prevState) => ({
       ...prevState,
       [target.name]: target.value
     }));
+    validate(target.name, target.value);
   };
 
-  const errors = {
-    email: 'Email is required',
-    password: 'Password is required',
-    date: 'Date is required'
+  const handleChangeErr = (name, value) => {
+    setDataErr((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
   };
+
+  const errorsConfig = {
+    email: {
+      isRequired: 'Email is required',
+      isEmail: 'Email entered incorrectly'
+    },
+    password: {
+      isRequired: 'Password is required',
+      isCapitalSymbol: 'Password must contain at least one capital letter',
+      isContainDigit: 'Password must contain at least one number',
+      min: 'Password must be at least 8 characters'
+    },
+    date: {
+      isRequired: 'Email is required'
+    }
+  };
+
+  const validate = (name, value) => {
+    //email
+    if (name === 'email') {
+      if (value.trim() === '') {
+        handleChangeErr(name, (value = errorsConfig.email.isRequired));
+        return;
+      }
+      if (!/^\S+@\S+\.\S+$/g.test(value)) {
+        handleChangeErr(name, (value = errorsConfig.email.isEmail));
+        return;
+      }
+      if (true) {
+        handleChangeErr(name, (value = ''));
+        return;
+      }
+    }
+
+    //password
+    if (name === 'password') {
+      if (value.trim() === '') {
+        handleChangeErr(name, (value = errorsConfig.password.isRequired));
+        return;
+      }
+      if (!/[A-Z]+/g.test(value)) {
+        handleChangeErr(name, (value = errorsConfig.password.isCapitalSymbol));
+        return;
+      }
+      if (!/\d+/g.test(value)) {
+        handleChangeErr(name, (value = errorsConfig.password.isContainDigit));
+        return;
+      }
+      if (data.password.length < 8) {
+        handleChangeErr(name, (value = errorsConfig.password.min));
+        return;
+      }
+      if (true) {
+        handleChangeErr(name, (value = ''));
+        return;
+      }
+    }
+    //date
+    if (name === 'date') {
+      if (value.trim() === '') {
+        handleChangeErr(name, (value = errorsConfig.date.isRequired));
+        return;
+      }
+      if (true) {
+        handleChangeErr(name, (value = ''));
+        return;
+      }
+    }
+    return dataErr;
+  };
+
   return (
     <div className="login">
       <div className="login__container">
@@ -27,8 +110,9 @@ const Login = () => {
               label="Email"
               type="email"
               name="email"
+              value={data.email}
               onChange={handleChange}
-              error={errors.email}
+              error={dataErr.email}
             />
             <Field
               label="Password"
@@ -36,19 +120,25 @@ const Login = () => {
               name="password"
               value={data.password}
               onChange={handleChange}
-              error={errors.password}
+              error={dataErr.password}
             />
+            {login ? (
+              <button
+                className="btn btn-primary w-100 mx-auto"
+                type="submit"
+                disabled={
+                  dataErr.email === '' && dataErr.password === ''
+                    ? ''
+                    : 'disabled'
+                }
+              >
+                Submit
+              </button>
+            ) : null}
+
             {login ? null : (
               <div className="register">
-                <Field
-                  label="Your birthday:"
-                  type="date"
-                  name="date"
-                  value={data.date}
-                  onChange={handleChange}
-                  error={errors.date}
-                />
-                {/* <div className="data mt-4 mb-3">
+                <div className="data mt-4 mb-3">
                   <p>Your birthday:</p>
                   <input
                     type="date"
@@ -56,7 +146,15 @@ const Login = () => {
                     id="date"
                     onChange={handleChange}
                   />
-                </div> */}
+                </div>
+                <Field
+                  label="Your birthday:"
+                  type="date"
+                  name="date"
+                  value={data.date}
+                  onChange={handleChange}
+                  error={dataErr.date}
+                />
 
                 <div className="login_register-radio mt-4 mb-3">
                   <p className="login_register-paragraf mb-3">
@@ -86,13 +184,20 @@ const Login = () => {
                       id="register-radio3"
                       type="radio"
                       name="radio"
+                      checked
                     />
                     <label htmlFor="register-radio3">Other</label>
                   </div>
                 </div>
+
                 <div className="mt-4 mb-4">
                   <label htmlFor="checkbox">
-                    <input type="checkbox" className="me-2" id="checkbox" />
+                    <input
+                      type="checkbox"
+                      className="me-2"
+                      id="checkbox"
+                      onClick={() => setAgreement(!agreement)}
+                    />
                     Confirm international agreement
                   </label>
                   <p>
@@ -100,15 +205,22 @@ const Login = () => {
                     agreement
                   </p>
                 </div>
+                <button
+                  className="btn btn-primary w-100 mx-auto"
+                  type="submit"
+                  disabled={
+                    dataErr.email === '' &&
+                    dataErr.password === '' &&
+                    dataErr.date === '' &&
+                    agreement
+                      ? ''
+                      : 'disabled'
+                  }
+                >
+                  Submit
+                </button>
               </div>
             )}
-            <button
-              className="btn btn-primary w-100 mx-auto"
-              type="submit"
-              // disabled={}
-            >
-              Submit
-            </button>
 
             <div className="login__sing-up d-flex mt-3">
               <p className="login__dont-account mb-0">Dont have account?</p>
