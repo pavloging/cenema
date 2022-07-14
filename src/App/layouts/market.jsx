@@ -187,7 +187,10 @@ const Market = () => {
               <h2 className="binking__title">
                 Введите данные карты для оплаты
               </h2>
-              <h2 className="binking__title">Сумма составит: {payment}$</h2>
+              <h2 className="binking__title">
+                Сумма составит: <sup className="market__price-dollar">$</sup>
+                {payment}
+              </h2>
               <div className="binking__panels">
                 <div
                   className="binking__panel binking__front-panel"
@@ -286,3 +289,4 @@ const Market = () => {
     </div>
   );
 };
+export default Market;
