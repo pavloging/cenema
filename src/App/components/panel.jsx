@@ -7,8 +7,6 @@ const Panel = () => {
   const [icon, setIcon] = useState(false);
   const [change, setChange] = useState('');
   const getFilms = GetFilms('list')[0];
-  const hangleIcon = () => setIcon(!icon);
-  const hangleDropDown = () => setDropDown(!dropDown);
 
   return (
     <div className="panel">
@@ -23,7 +21,12 @@ const Panel = () => {
           </a>
         </div>
 
-        <div className="panel__icon-search" onClick={hangleIcon}>
+        <div
+          className="panel__icon-search"
+          onClick={() => {
+            setIcon(!icon);
+          }}
+        >
           <i className="bi bi-search"></i>
         </div>
 
@@ -53,7 +56,10 @@ const Panel = () => {
             })
           : null}
       </div>
-      <div className="panel__icon-profile" onClick={hangleDropDown}>
+      <div
+        className="panel__icon-profile"
+        onClick={() => setDropDown(!dropDown)}
+      >
         <img
           className="panel__icon-profile-img"
           src="/images/mary.jpg"

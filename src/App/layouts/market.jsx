@@ -4,6 +4,8 @@ const Market = () => {
   const [val, setVal] = useState('');
   const [date, setDate] = useState({ ccmonth: '', ccyear: '' });
   const [cvv, setCvv] = useState('');
+  const [toast, setToast] = useState(false);
+  const [seconds, setSeconds] = useState(0);
 
   const cber_default = val.slice(0, 4) === '4276';
   const cber_rare = val.slice(0, 4) === '4279';
@@ -93,8 +95,11 @@ const Market = () => {
     setCvv('412');
   };
 
-  //End
-  const hiddenToast = () => {};
+  //Timer
+  const getTime = () => {
+    setTimeout(setSeconds, 1000, seconds + 1);
+    return seconds;
+  };
 
   return (
     <div className="market">
@@ -303,7 +308,7 @@ const Market = () => {
                 <button
                   type="button"
                   className="btn btn-primary"
-                  onClick={() => hiddenToast()}
+                  onClick={() => setToast(!toast)}
                   disabled={
                     val.length === 16 &&
                     cvv.length === 3 &&
@@ -317,8 +322,29 @@ const Market = () => {
                 </button>
               </div>
             </form>
+            {toast ? (
+              <div className="payment__toast">
+                <div className="payment__menu">
+                  <div className="payment__menu-top">
+                    <h5 className="payment__menu-title">Внимание</h5>
+                  </div>
+                  <div className="payment__time">
+                    <small>{getTime() + 's ago'}</small>
+                  </div>
+                  <div
+                    className="payment__menu-close"
+                    onClick={() => setToast(!toast)}
+                  >
+                    <i className="bi bi-x-lg"></i>
+                  </div>
+                </div>
+                <div className="payment__message">
+                  <p className="payment__paragraf">Оплата прошла успешно!</p>
+                </div>
+              </div>
+            ) : null}
+            <i className="bi bi-x-octagon" onClick={() => setPayment('')}></i>
           </div>
-          <i className="bi bi-x-octagon" onClick={() => setPayment('')}></i>
         </div>
       ) : null}
     </div>
