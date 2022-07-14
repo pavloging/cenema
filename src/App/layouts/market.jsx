@@ -2,6 +2,11 @@ import { useState } from 'react';
 const Market = () => {
   const [payment, setPayment] = useState();
   const [val, setVal] = useState('');
+  const [date, setDate] = useState({ ccmonth: '', ccyear: '' });
+  const [cvv, setCvv] = useState('');
+
+  const cber_default = val.slice(0, 4) === '4276';
+  const cber_rare = val.slice(0, 4) === '4279';
 
   //Bank
   const getBank = () => {
@@ -9,21 +14,21 @@ const Market = () => {
     if (val[0] === '3') {
       logo = '/images/payment/bank/ru-rosbank-big-original.svg';
     }
-    if (val === '4276' || val === '4279') {
+    if (cber_default || cber_rare) {
       logo = '/images/payment/bank/ru-sberbank-big-inverted.svg';
     }
     return logo;
   };
 
   const getColor = () => {
-    if (val === '4276' || val === '4279') {
+    if (cber_default || cber_rare) {
       return { background: ' #1a9f29' };
     }
   };
 
   const hiddenBank = () => {
     let brand;
-    if (val === '4276' || val === '4279') {
+    if (cber_default || cber_rare) {
       return (brand = 'binking__form-bank-logo');
     }
     if (true) {
@@ -71,6 +76,25 @@ const Market = () => {
     }
     return text;
   };
+
+  //Data
+  const handleChange = ({ target }) => {
+    setDate((prevState) => ({
+      ...prevState,
+      [target.name]: target.value
+    }));
+  };
+
+  //Ready
+  const readyCard = () => {
+    console.log('hi');
+    setVal('4276701025132434');
+    setDate({ ccmonth: '12', ccyear: '30' });
+    setCvv('412');
+  };
+
+  //End
+  const hiddenToast = () => {};
 
   return (
     <div className="market">
@@ -188,13 +212,12 @@ const Market = () => {
               <h2 className="binking__title">
                 Введите данные карты для оплаты
               </h2>
-              <h2 className="binking__title">
-                Сумма составит:{' '}
-                <sup className="market__price-dollar" style={{ color: '#eee' }}>
-                  $
-                </sup>
+              <h2 className="binking__title">Сумма составит:</h2>
+              <h1 className="binking__price">
+                <sup className="market__price-dollar">$</sup>
                 {payment}
-              </h2>
+              </h1>
+
               <div className="binking__panels">
                 <div
                   className="binking__panel binking__front-panel"
@@ -210,12 +233,12 @@ const Market = () => {
                       pattern="[0-9 ]*"
                       className="binking__field binking__number-field"
                       type="text"
+                      maxLength="19"
+                      placeholder="0000 0000 0000 0000"
                       value={getVal(val)}
                       onChange={(e) =>
                         setVal(e.target.value.replace(/ */g, ''))
                       }
-                      maxLength="19"
-                      placeholder="0000 0000 0000 0000"
                     />
                     <label className="binking__label binking__date-label">
                       Valid thru
@@ -229,6 +252,8 @@ const Market = () => {
                       type="text"
                       maxLength="2"
                       placeholder="MM"
+                      value={date.ccmonth}
+                      onChange={handleChange}
                     />
                     <input
                       name="ccyear"
@@ -239,6 +264,8 @@ const Market = () => {
                       type="text"
                       maxLength="2"
                       placeholder="YY"
+                      value={date.ccyear}
+                      onChange={handleChange}
                     />
                   </div>
                 </div>
@@ -253,6 +280,8 @@ const Market = () => {
                     className="binking__field binking__code-field"
                     maxLength="3"
                     type="password"
+                    value={cvv}
+                    onChange={(e) => setCvv(e.target.value)}
                   />
                   <label className="binking__label binking__code-label">
                     Safety code
@@ -260,32 +289,34 @@ const Market = () => {
                 </div>
               </div>
               <label className="binking__save-card">
-                <input
-                  className="binking__save-card-checkbox"
-                  name="save"
-                  type="checkbox"
-                />
-                <span>Сохранить карту для последующих платежей</span>
+                <button
+                  className="btn btn-success"
+                  style={{ backgroundColor: '#1a9f29' }}
+                  onClick={() => readyCard()}
+                  type="button"
+                >
+                  Воспользоваться данными карты предыдущего покупателя
+                </button>
               </label>
               <div className="binking__form-bottom">
                 <p className="binking__error binking__hide"></p>
                 <button
-                  className="binking__submit-button binking__button"
                   type="button"
+                  className="btn btn-primary"
+                  onClick={() => hiddenToast()}
+                  disabled={
+                    val.length === 16 &&
+                    cvv.length === 3 &&
+                    date.ccmonth.length === 2 &&
+                    date.ccyear.length === 2
+                      ? false
+                      : true
+                  }
                 >
                   Оплатить
                 </button>
               </div>
             </form>
-            <div className="binking__success binking__hide">
-              <h2 className="binking__title">Оплата произведена успешно</h2>
-              <button
-                className="binking__reset-button binking__button"
-                type="submit"
-              >
-                Вернуться к форме оплаты
-              </button>
-            </div>
           </div>
           <i className="bi bi-x-octagon" onClick={() => setPayment('')}></i>
         </div>

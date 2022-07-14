@@ -940,6 +940,10 @@ input::-webkit-inner-spin-button {
   margin-bottom: 0.4em;
 }
 
+.binking__price {
+  color: #fff !important;
+}
+
 .binking__panels {
   width: 500px;
   height: 260px;
