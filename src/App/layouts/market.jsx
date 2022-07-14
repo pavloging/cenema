@@ -180,6 +180,7 @@ const Market = () => {
           </div>
         </div>
       </div>
+      {/* Payment  */}
       {typeof payment === 'number' ? (
         <div className="payment">
           <div className="binking">
