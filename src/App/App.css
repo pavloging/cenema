@@ -566,6 +566,7 @@ h4 {
   background-color: red;
   border-radius: 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 .market__card:nth-child(1) .market__link,
 .market__card:nth-child(1) .market__icon {
@@ -885,4 +886,456 @@ h4 {
   .market__link {
     margin-top: 0;
   }
+}
+
+/* CARD - payment */
+.payment {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  bottom: 10%;
+  left: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+  background-color: #291c22;
+  border-radius: 10px;
+  opacity: 0.98;
+}
+.payment h2,
+.payment span {
+  color: rgb(245, 245, 245);
+}
+.bi-x-octagon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  color: red;
+  font-size: xxx-large;
+  cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.binking {
+  font-size: 16px;
+}
+
+.binking__form.binking__hide {
+  display: none;
+}
+
+.binking__success.binking__hide {
+  display: none;
+}
+
+.binking__title {
+  font-size: 1.4em;
+  margin: 0;
+  margin-bottom: 0.4em;
+}
+
+.binking__panels {
+  width: 500px;
+  height: 260px;
+  position: relative;
+}
+
+.binking__panel {
+  position: absolute;
+  width: 370px;
+  height: 230px;
+  border-radius: 15px;
+}
+
+.binking__front-panel {
+  background: #eeeeee;
+  border: 1px solid rgb(46, 33, 39);
+  color: #000;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: background-color 150ms ease;
+}
+
+.binking__form-bank-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px 27px 0;
+  width: 100%;
+  height: 68px;
+  object-fit: contain;
+  object-position: 0 0;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.binking__form-bank-logo.binking__hide {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.binking__form-brand-logo {
+  position: absolute;
+  bottom: 26px;
+  right: 27px;
+  text-align: right;
+  height: 36px;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+
+.binking__form-brand-logo.binking__hide {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.binking__front-fields {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 26px;
+}
+
+.binking__number-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.binking__date-label {
+  margin-bottom: 6px;
+  transition: color 150ms ease;
+}
+
+.binking__date-field {
+  display: inline-block;
+  width: 51px;
+}
+
+.binking__month-field {
+  margin-right: 10px;
+}
+
+.binking__back-panel {
+  bottom: 0;
+  right: 0;
+  background: #bbb;
+}
+
+.binking__back-panel:before {
+  content: '';
+  position: absolute;
+  top: 26px;
+  background: #444;
+  width: 100%;
+  height: 60px;
+  left: 0;
+}
+
+.binking__code-field {
+  position: absolute;
+  bottom: 77px;
+  right: 26px;
+  width: 80px;
+}
+
+.binking__code-label {
+  position: absolute;
+  width: 80px;
+  right: 26px;
+  bottom: 34px;
+}
+
+.binking__field {
+  padding: 6px 10px;
+  font-family: Courier, monospace;
+  font-size: 20px;
+  text-indent: 2px;
+  border: 1px solid #333;
+  transition: border-color 150ms ease;
+}
+
+.binking__field:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.binking__label {
+  display: block;
+}
+
+.binking__save-card {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 0.5em;
+}
+
+.binking__save-card-checkbox {
+  margin-right: 6px;
+}
+
+.binking__saved-cards {
+  margin-top: 1.5em;
+}
+
+.binking__saved-cards.binking__hide {
+  display: none;
+}
+
+.binking__cards {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  margin-right: -1em;
+  margin-bottom: -1em;
+}
+
+.binking__cards.binking__disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.binking__card {
+  height: 60px;
+  padding: 10px;
+  background: #eeeeee;
+  border-radius: 10px;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  cursor: pointer;
+}
+
+.binking__card.binking__selected {
+  box-shadow: inset 0 0 0 3px #00c;
+}
+
+.binking__card-bank-logo {
+  object-fit: contain;
+  object-position: 50% 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.binking__card-last4 {
+  white-space: nowrap;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.binking__card-brand-logo {
+  height: 20px;
+}
+
+.binking__form-bottom {
+  margin-top: 1em;
+}
+
+.binking__error {
+  margin-bottom: 0.5em;
+  color: #c00;
+}
+
+.binking__error.binking__hide {
+  display: none;
+}
+
+.binking__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.7em;
+  padding: 0.5em 1.5em;
+  text-decoration: none;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  text-align: center;
+  -webkit-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+  background: #1e9800;
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#1b8900),
+    to(#28cb00)
+  );
+  background: linear-gradient(0deg, #1b8900, #28cb00);
+  box-shadow: inset 0 6px 8px -2px #2de500, inset 0 -3px 5px -3px #051900;
+  text-shadow: 1px 1px #177400;
+  color: #fff;
+}
+
+.binking__button:hover {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#1e9800),
+    to(#2de500)
+  );
+  background: linear-gradient(0deg, #1e9800, #2de500);
+}
+
+.binking__button:active {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(#28cb00),
+    to(#1b8900)
+  );
+  background: linear-gradient(0deg, #28cb00, #1b8900);
+  box-shadow: inset 0 6px 8px -2px #28cb00, inset 0 -2px 8px -3px #000;
+}
+
+.binking__button.binking__loading {
+  pointer-events: none;
+  opacity: 0.5;
+  color: transparent;
+  text-shadow: none;
+}
+
+.binking__button.binking__loading:after {
+  content: '';
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: -9999em;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: binking__spin 1.1s linear infinite;
+  animation: binking__spin 1.1s linear infinite;
+  border: 5px solid hsla(0, 0%, 100%, 0.2);
+  border-left-color: #fff;
+  width: 30px;
+  height: 30px;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -20px;
+}
+
+.binking__button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@-webkit-keyframes binking__spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes binking__spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+}
+
+.binking__hint {
+  line-height: 1.5;
+}
+
+@media (max-width: 540px) {
+  .binking__panels {
+    width: 386px;
+    height: 300px;
+  }
+  .binking__code-field {
+    bottom: 16px;
+  }
+  .binking__code-label {
+    text-align: right;
+    right: 115px;
+    bottom: 17px;
+  }
+}
+
+@media (max-width: 430px) {
+  .binking {
+    font-size: 14px;
+  }
+  .binking__panels {
+    width: 300px;
+    height: 243px;
+  }
+  .binking__panel {
+    width: 290px;
+    height: 180px;
+    border-radius: 10px;
+  }
+  .binking__form-bank-logo {
+    padding: 15px 16px 0;
+    height: 57px;
+  }
+  .binking__form-brand-logo {
+    bottom: 16px;
+    right: 17px;
+    height: 30px;
+  }
+  .binking__front-fields {
+    padding: 16px;
+  }
+  .binking__number-field {
+    margin-bottom: 12px;
+  }
+  .binking__date-label {
+    margin-bottom: 4px;
+  }
+  .binking__date-field {
+    width: 45px;
+  }
+  .binking__month-field {
+    margin-right: 10px;
+  }
+  .binking__code-field {
+    bottom: 16px;
+    width: 62px;
+  }
+  .binking__code-label {
+    right: 97px;
+    bottom: 16px;
+  }
+  .binking__back-panel:before {
+    top: 16px;
+    height: 60px;
+  }
+  .binking__field {
+    padding: 6px 10px;
+    font-size: 14px;
+    text-indent: 2px;
+  }
+}
+
+.tippy-tooltip.custom-theme {
+  background-color: #c00;
+  color: #ffffff;
+}
+
+.tippy-tooltip.custom-theme[data-placement^='top'] .tippy-arrow {
+  border-top-color: #c00;
 }
