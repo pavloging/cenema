@@ -189,7 +189,10 @@ const Market = () => {
                 Введите данные карты для оплаты
               </h2>
               <h2 className="binking__title">
-                Сумма составит: <sup className="market__price-dollar">$</sup>
+                Сумма составит:{' '}
+                <sup className="market__price-dollar" style={{ color: '#eee' }}>
+                  $
+                </sup>
                 {payment}
               </h2>
               <div className="binking__panels">
