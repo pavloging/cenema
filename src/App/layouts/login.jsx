@@ -13,6 +13,7 @@ const Login = () => {
     password: 'Password is required',
     date: 'Date is required'
   });
+  const [check, setCheck] = useState('');
   const [agreement, setAgreement] = useState(false);
 
   const handleChange = ({ target }) => {
@@ -166,6 +167,7 @@ const Login = () => {
                       id="register-radio1"
                       type="radio"
                       name="radio"
+                      onClick={() => setCheck('Male')}
                     />
                     <label htmlFor="register-radio1">Male</label>
                   </div>
@@ -175,6 +177,7 @@ const Login = () => {
                       id="register-radio2"
                       type="radio"
                       name="radio"
+                      onClick={() => setCheck('Female')}
                     />
                     <label htmlFor="register-radio2">Female</label>
                   </div>
@@ -184,7 +187,7 @@ const Login = () => {
                       id="register-radio3"
                       type="radio"
                       name="radio"
-                      checked
+                      onClick={() => setCheck('Other')}
                     />
                     <label htmlFor="register-radio3">Other</label>
                   </div>
@@ -212,6 +215,7 @@ const Login = () => {
                     dataErr.email === '' &&
                     dataErr.password === '' &&
                     dataErr.date === '' &&
+                    check !== '' &&
                     agreement
                       ? ''
                       : 'disabled'

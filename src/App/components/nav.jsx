@@ -18,6 +18,7 @@ const Nav = () => {
 
   useEffect(() => {
     handleColor();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -77,7 +78,7 @@ const Nav = () => {
       </div>
       <div className="nav__burger" onClick={() => setBurger(!burger)}>
         <div className="nav__toggle">
-          <input type="checkbox" checked={!burger} />
+          <input type="checkbox" checked={!burger} readOnly />
 
           <span></span>
           <span></span>
