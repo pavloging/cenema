@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import GetFilms from '../untils/getFilms.js';
 
 const Home = () => {
@@ -52,10 +53,18 @@ const Home = () => {
           <h1>es</h1>
         </div>
         <div className="home__poster">
-          <img src="/images/mov/movie.webp" alt="movie-img" />
-          <img src="/images/mov/movie2.webp" alt="movie-img" />
-          <img src="/images/mov/movie3.webp" alt="movie-img" />
-          <img src="/images/mov/movie4.webp" alt="movie-img" />
+          <Link to={'/films/tt1677720'}>
+            <img src="/images/mov/movie.webp" alt="movie-img" />
+          </Link>
+          <Link to={'/films/tt4633694'}>
+            <img src="/images/mov/movie2.webp" alt="movie-img" />
+          </Link>
+          <Link to={'/films/tt0120338'}>
+            <img src="/images/mov/movie3.webp" alt="movie-img" />
+          </Link>
+          <Link to={'/films/tt0068646'}>
+            <img src="/images/mov/movie4.webp" alt="movie-img" />
+          </Link>
         </div>
       </div>
     </div>

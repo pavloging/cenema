@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-let one = true;
+
 const Nav = () => {
   const [burger, setBurger] = useState(false);
   const [active, setActive] = useState('/');
@@ -16,10 +16,9 @@ const Nav = () => {
     }, 0);
   };
 
-  if (one) {
+  useEffect(() => {
     handleColor();
-    one = false;
-  }
+  }, []);
 
   return (
     <div className="nav">
@@ -78,7 +77,7 @@ const Nav = () => {
       </div>
       <div className="nav__burger" onClick={() => setBurger(!burger)}>
         <div className="nav__toggle">
-          <input type="checkbox" />
+          <input type="checkbox" checked={!burger} />
 
           <span></span>
           <span></span>

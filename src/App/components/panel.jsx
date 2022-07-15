@@ -15,7 +15,7 @@ const Panel = () => {
           <a
             target="_blank"
             rel="noreferrer"
-            href="https://github.com/pavlovsun"
+            href="https://github.com/pavloging"
           >
             <i className="bi bi-github"></i>
           </a>
