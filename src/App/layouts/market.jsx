@@ -322,7 +322,7 @@ const Market = () => {
                 </button>
               </div>
             </form>
-            {toast ? (
+            {toast && (
               <div className="payment__toast">
                 <div className="payment__menu">
                   <div className="payment__menu-top">
@@ -342,7 +342,7 @@ const Market = () => {
                   <p className="payment__paragraf">Оплата прошла успешно!</p>
                 </div>
               </div>
-            ) : null}
+            )}
             <i className="bi bi-x-octagon" onClick={() => setPayment('')}></i>
           </div>
         </div>
