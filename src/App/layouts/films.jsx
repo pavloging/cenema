@@ -11,6 +11,7 @@ const Films = () => {
   const pageSize = 10;
   const handlePageChange = (pageIndex) => setCurrentPage(pageIndex);
   const filmCrop = paginate(getFilms, currentPage, pageSize);
+  console.log(filmCrop);
   return (
     <>
       <div className="films">
