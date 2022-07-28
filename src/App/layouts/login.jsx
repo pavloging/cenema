@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Field from '../components/field.jsx';
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
     password: 'Password is required',
     date: 'Date is required'
   });
-  const [check, setCheck] = useState('');
+  const [gender, setGender] = useState('');
   const [agreement, setAgreement] = useState(false);
 
   const handleChange = ({ target }) => {
@@ -101,6 +102,14 @@ const Login = () => {
     return dataErr;
   };
 
+  //localStorage
+  const handleSetData = () => {
+    localStorage.setItem('email', data.email);
+    localStorage.setItem('password', data.password);
+    localStorage.setItem('data', data.date);
+    localStorage.setItem('gender', gender);
+  };
+
   return (
     <div className="login">
       <div className="login__container">
@@ -124,17 +133,19 @@ const Login = () => {
               error={dataErr.password}
             />
             {login ? (
-              <button
-                className="btn btn-primary w-100 mx-auto"
-                type="submit"
-                disabled={
-                  dataErr.email === '' && dataErr.password === ''
-                    ? ''
-                    : 'disabled'
-                }
-              >
-                Submit
-              </button>
+              <Link to={'/profile'}>
+                <button
+                  className="btn btn-primary w-100 mx-auto"
+                  type="submit"
+                  disabled={
+                    dataErr.email === '' && dataErr.password === ''
+                      ? ''
+                      : 'disabled'
+                  }
+                >
+                  Submit
+                </button>
+              </Link>
             ) : null}
 
             {login ? null : (
@@ -167,7 +178,7 @@ const Login = () => {
                       id="register-radio1"
                       type="radio"
                       name="radio"
-                      onClick={() => setCheck('Male')}
+                      onClick={() => setGender('Male')}
                     />
                     <label htmlFor="register-radio1">Male</label>
                   </div>
@@ -177,7 +188,7 @@ const Login = () => {
                       id="register-radio2"
                       type="radio"
                       name="radio"
-                      onClick={() => setCheck('Female')}
+                      onClick={() => setGender('Female')}
                     />
                     <label htmlFor="register-radio2">Female</label>
                   </div>
@@ -187,7 +198,7 @@ const Login = () => {
                       id="register-radio3"
                       type="radio"
                       name="radio"
-                      onClick={() => setCheck('Other')}
+                      onClick={() => setGender('Other')}
                     />
                     <label htmlFor="register-radio3">Other</label>
                   </div>
@@ -208,21 +219,24 @@ const Login = () => {
                     agreement
                   </p>
                 </div>
-                <button
-                  className="btn btn-primary w-100 mx-auto"
-                  type="submit"
-                  disabled={
-                    dataErr.email === '' &&
-                    dataErr.password === '' &&
-                    dataErr.date === '' &&
-                    check !== '' &&
-                    agreement
-                      ? ''
-                      : 'disabled'
-                  }
-                >
-                  Submit
-                </button>
+                <Link to={'/profile'}>
+                  <button
+                    className="btn btn-primary w-100 mx-auto"
+                    type="button"
+                    onClick={handleSetData}
+                    disabled={
+                      dataErr.email === '' &&
+                      dataErr.password === '' &&
+                      dataErr.date === '' &&
+                      gender !== '' &&
+                      agreement
+                        ? ''
+                        : 'disabled'
+                    }
+                  >
+                    Submit
+                  </button>
+                </Link>
               </div>
             )}
 

@@ -278,7 +278,7 @@ h4 {
 .home__info {
   width: 35%;
   margin-left: var(--margin-nav);
-  padding: 12% 2%;
+  padding: 14% 2%;
   background-color: var(--main-color);
   border-right: 1px solid var(--font-color);
   opacity: var(--opacity);
@@ -299,6 +299,15 @@ h4 {
   color: red !important;
   border: 2px solid red;
   border-radius: 15px;
+}
+.home__film-title {
+  font-size: 2rem;
+}
+.home__child-title {
+  font-size: 1.5rem;
+}
+.home__description-title {
+  font-size: 1.25rem;
 }
 .home__link {
   display: inline-block;
@@ -1240,11 +1249,22 @@ input::-webkit-inner-spin-button {
 }
 
 /* MEDIA */
-@media all and (max-device-width: 992px) {
+@media all and (max-device-width: 1200px) {
   .home {
     background: 50%;
     background-size: cover;
   }
+  .home__paragraph {
+    font-size: 1rem;
+  }
+  .home__film-title {
+    font-size: 1.4rem;
+  }
+  .home__info {
+    padding: 2% 2%;
+  }
+}
+@media all and (max-device-width: 992px) {
   .nav {
     width: 10%;
   }
@@ -1259,8 +1279,8 @@ input::-webkit-inner-spin-button {
 @media all and (max-device-width: 767px) {
   .nav {
     /* position: absolute;
-    width: 100vw;
-    height: 100vh; */
+      width: 100vw;
+      height: 100vh; */
     border-right: 0;
     border-image: none;
     opacity: 1;
