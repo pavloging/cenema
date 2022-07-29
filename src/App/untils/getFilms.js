@@ -29,8 +29,6 @@ const SendFilms = (parameter) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // film[0].youtube = youtube[0];
-
   let send;
   parameter === 'random'
     ? (send = [film, index.img, index.youtube])
