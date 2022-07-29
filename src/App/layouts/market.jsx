@@ -89,7 +89,6 @@ const Market = () => {
 
   //Ready
   const readyCard = () => {
-    console.log('hi');
     setVal('4276701025132434');
     setDate({ ccmonth: '12', ccyear: '30' });
     setCvv('412');
@@ -99,6 +98,15 @@ const Market = () => {
   const getTime = () => {
     setTimeout(setSeconds, 1000, seconds + 1);
     return seconds;
+  };
+
+  //
+  const handleSetPayment = (count) => {
+    if (localStorage?.email && localStorage?.password) {
+      setPayment(count);
+    } else {
+      alert('You are not authorized');
+    }
   };
 
   return (
@@ -132,7 +140,7 @@ const Market = () => {
                   &nbsp;Live Support
                 </li>
               </ul>
-              <p className="market__link" onClick={() => setPayment(25)}>
+              <p className="market__link" onClick={() => handleSetPayment(25)}>
                 Order Now
               </p>
             </div>
@@ -167,7 +175,7 @@ const Market = () => {
                   &nbsp;Live Support
                 </li>
               </ul>
-              <p className="market__link" onClick={() => setPayment(50)}>
+              <p className="market__link" onClick={() => handleSetPayment(50)}>
                 Order Now
               </p>
             </div>
@@ -202,7 +210,7 @@ const Market = () => {
                   &nbsp;Live Support
                 </li>
               </ul>
-              <p className="market__link" onClick={() => setPayment(100)}>
+              <p className="market__link" onClick={() => handleSetPayment(100)}>
                 Order Now
               </p>
             </div>
