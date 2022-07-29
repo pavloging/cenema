@@ -25,12 +25,12 @@ const Profile = () => {
           </div>
 
           <div className="profile__container">
-            <h3>Fullname: </h3>
+            <h3>Surname: </h3>
             <input
               className="profile__input"
-              id="fullname"
+              id="surname"
               type="text"
-              placeholder={localStorage.getItem('fullname')}
+              placeholder={localStorage.getItem('surname')}
               onChange={(e) => handleData(e)}
             />
           </div>

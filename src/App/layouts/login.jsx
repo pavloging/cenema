@@ -110,7 +110,7 @@ const Login = () => {
     localStorage.setItem('gender', gender);
 
     localStorage.setItem('name', 'Enter your name...');
-    localStorage.setItem('fullname', 'Enter your fullname...');
+    localStorage.setItem('surname', 'Enter your surname...');
   };
 
   //localStorage - login

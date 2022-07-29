@@ -741,7 +741,7 @@ h4 {
   color: #000;
 }
 #name::placeholder,
-#fullname::placeholder {
+#surname::placeholder {
   color: #727272;
 }
 .profile__data {
