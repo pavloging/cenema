@@ -726,6 +726,28 @@ h4 {
   }
 }
 
+/* PROFILE */
+.profile__container {
+  margin: 16px;
+}
+.profile__input {
+  font-size: larger;
+  padding: 4px 14px;
+  border: 1px solid;
+  border-radius: 5px;
+  background: #e8e8e8;
+}
+.profile__input::placeholder {
+  color: #000;
+}
+#name::placeholder,
+#fullname::placeholder {
+  color: #727272;
+}
+.profile__data {
+  margin: 20px;
+}
+
 /* CARD - payment */
 .payment {
   position: absolute;
@@ -1249,7 +1271,7 @@ input::-webkit-inner-spin-button {
 }
 
 /* MEDIA */
-@media all and (max-device-width: 1200px) {
+@media all and (max-device-width: 1366px) {
   .home {
     background: 50%;
     background-size: cover;

@@ -7,7 +7,7 @@ const Like = () => {
     if (
       localStorage.key(i) !== 'email' &&
       localStorage.key(i) !== 'password' &&
-      localStorage.key(i) !== 'data' &&
+      localStorage.key(i) !== 'date' &&
       localStorage.key(i) !== 'gender'
     )
       likedKey.push(localStorage.key(i));

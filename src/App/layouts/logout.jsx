@@ -5,8 +5,11 @@ const Logout = () => {
     if (localStorage?.email) {
       localStorage.removeItem('email');
       localStorage.removeItem('password');
-      localStorage.removeItem('data');
+      localStorage.removeItem('date');
       localStorage.removeItem('gender');
+
+      localStorage.removeItem('name');
+      localStorage.removeItem('fullname');
     }
   }, []);
 
@@ -15,9 +18,9 @@ const Logout = () => {
   return (
     <>
       {localStorage?.email ? (
-        <h1 className={styleH1}>You have successfully exited!</h1>
+        <h2 className={styleH1}>You have successfully exited!</h2>
       ) : (
-        <h1 className={styleH1}>You are not registred :-/</h1>
+        <h2 className={styleH1}>You are not registered :-/</h2>
       )}
     </>
   );

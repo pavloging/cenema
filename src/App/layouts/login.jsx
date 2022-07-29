@@ -106,8 +106,11 @@ const Login = () => {
   const handleSetData = () => {
     localStorage.setItem('email', data.email);
     localStorage.setItem('password', data.password);
-    localStorage.setItem('data', data.date);
+    localStorage.setItem('date', data.date);
     localStorage.setItem('gender', gender);
+
+    localStorage.setItem('name', 'Enter your name...');
+    localStorage.setItem('fullname', 'Enter your fullname...');
   };
 
   //localStorage - login
