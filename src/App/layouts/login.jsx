@@ -64,6 +64,7 @@ const Login = () => {
         return;
       }
     }
+    console.log(data.password.length);
 
     //password
     if (name === 'password') {

@@ -4,7 +4,13 @@ import LikeSvg from '../components/likeSvg';
 const Like = () => {
   const likedKey = [];
   for (let i = 0; i < localStorage.length; i++) {
-    likedKey.push(localStorage.key(i));
+    if (
+      localStorage.key(i) !== 'email' &&
+      localStorage.key(i) !== 'password' &&
+      localStorage.key(i) !== 'data' &&
+      localStorage.key(i) !== 'gender'
+    )
+      likedKey.push(localStorage.key(i));
   }
   const liked = likedKey.map((el) => {
     return JSON.parse(localStorage.getItem(el));
