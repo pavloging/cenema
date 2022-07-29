@@ -102,7 +102,10 @@ const Market = () => {
 
   //Validate register account
   const handleSetPayment = (count) => {
-    if (localStorage?.email && localStorage?.password) {
+    if (
+      localStorage?.getItem('email') !== null &&
+      localStorage?.getItem('password') !== null
+    ) {
       setPayment(count);
     } else {
       alert('You are not authorized');
