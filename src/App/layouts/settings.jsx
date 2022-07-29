@@ -1,7 +1,61 @@
+import { useState } from 'react';
+
 const Settings = () => {
+  const [background, setBackground] = useState(false);
+  const handleClearFavorite = () => {
+    const clearFavorite = Object.keys(localStorage).filter(
+      (el) => el.slice(0, 3) === 'obj'
+    );
+    console.log(clearFavorite);
+    clearFavorite.map((el) => {
+      localStorage.removeItem(el);
+    });
+  };
+  const handleChangeBackground = () => {
+    setBackground(!background);
+    if (background) {
+      document.body.style.backgroundColor = '#fff';
+    }
+    if (!background) {
+      document.body.style.backgroundColor = '#303030';
+    }
+  };
   return (
-    <div className="vh-100 d-flex justify-content-center align-items-center text-muted">
+    <div className="vh-100 d-flex justify-content-center align-items-center flex-column text-muted">
       <h2>Settings</h2>
+      <div className="settings__info">
+        <div className="settings__container">
+          <h3>
+            Your tariff:{' '}
+            {localStorage?.getItem('tariff') !== null
+              ? localStorage.getItem('tariff')
+              : 'custom'}
+          </h3>
+        </div>
+        <div className="settings__container">
+          <h3>
+            Clear favorite films:{' '}
+            <button
+              className="settings__btn btn"
+              onClick={() => handleClearFavorite()}
+            >
+              Click!
+            </button>
+          </h3>
+        </div>
+
+        <div className="settings__container">
+          <h3>
+            Сhange background theme:{' '}
+            <button
+              className="settings__btn btn"
+              onClick={() => handleChangeBackground()}
+            >
+              Click!
+            </button>
+          </h3>
+        </div>
+      </div>
     </div>
   );
 };

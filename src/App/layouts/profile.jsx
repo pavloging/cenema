@@ -12,7 +12,7 @@ const Profile = () => {
     <div className="profile vh-100 d-flex justify-content-center align-items-center flex-column text-muted">
       <h2>Profile</h2>
       {localStorage?.getItem('email') !== null ? (
-        <div className="profile__container">
+        <div className="profile__info">
           <div className="profile__container">
             <h3>Name: </h3>
             <input

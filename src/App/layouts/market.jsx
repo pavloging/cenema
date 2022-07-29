@@ -100,13 +100,26 @@ const Market = () => {
     return seconds;
   };
 
-  //
+  //Validate register account
   const handleSetPayment = (count) => {
     if (localStorage?.email && localStorage?.password) {
       setPayment(count);
     } else {
       alert('You are not authorized');
     }
+  };
+
+  //set tariff
+  const handleToast = () => {
+    let tariff = 'Basic';
+    if (payment === 50) {
+      tariff = 'Standart';
+    }
+    if (payment === 100) {
+      tariff = 'Premium';
+    }
+    localStorage.setItem('tariff', tariff);
+    setToast(!toast);
   };
 
   return (
@@ -314,7 +327,7 @@ const Market = () => {
                 <button
                   type="button"
                   className="btn btn-primary"
-                  onClick={() => setToast(!toast)}
+                  onClick={handleToast}
                   disabled={
                     val.length === 16 &&
                     cvv.length === 3 &&

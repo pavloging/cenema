@@ -748,6 +748,15 @@ h4 {
   margin: 20px;
 }
 
+/* SETTING */
+.settings__container {
+  margin: 16px;
+}
+.settings__btn {
+  color: #fff !important;
+  background-color: var(--font-color) !important;
+}
+
 /* CARD - payment */
 .payment {
   position: absolute;
