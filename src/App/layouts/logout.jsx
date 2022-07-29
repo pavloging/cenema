@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 
 const Logout = () => {
   useEffect(() => {
-    if (localStorage?.email) {
-      localStorage.removeItem('email');
-      localStorage.removeItem('password');
-      localStorage.removeItem('date');
-      localStorage.removeItem('gender');
-
-      localStorage.removeItem('name');
-      localStorage.removeItem('fullname');
+    if (localStorage?.getItem('email') !== null) {
+      const clearLocalStorage = Object.keys(localStorage).filter(
+        (el) => el.slice(0, 3) !== 'obj'
+      );
+      console.log(clearLocalStorage);
+      clearLocalStorage.map((el) => {
+        return localStorage.removeItem(el);
+      });
     }
   }, []);
 
