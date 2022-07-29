@@ -8,7 +8,7 @@ const Settings = () => {
     );
     console.log(clearFavorite);
     clearFavorite.map((el) => {
-      localStorage.removeItem(el);
+      return localStorage.removeItem(el);
     });
   };
   const handleChangeBackground = () => {
