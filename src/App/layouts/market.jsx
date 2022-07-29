@@ -214,10 +214,8 @@ const Market = () => {
         <div className="payment">
           <div className="binking">
             <form className="binking__form">
-              <h2 className="binking__title">
-                Введите данные карты для оплаты
-              </h2>
-              <h2 className="binking__title">Сумма составит:</h2>
+              <h2 className="binking__title">Enter card details for payment</h2>
+              <h2 className="binking__title">Amount of money</h2>
               <h1 className="binking__price">
                 <sup className="market__price-dollar">$</sup>
                 {payment}
@@ -300,7 +298,7 @@ const Market = () => {
                   onClick={() => readyCard()}
                   type="button"
                 >
-                  Воспользоваться данными карты предыдущего покупателя
+                  Use the card details of the previous buyer
                 </button>
               </label>
               <div className="binking__form-bottom">
@@ -318,7 +316,7 @@ const Market = () => {
                       : true
                   }
                 >
-                  Оплатить
+                  Pay
                 </button>
               </div>
             </form>
