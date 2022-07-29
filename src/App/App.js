@@ -9,6 +9,7 @@ import Login from './layouts/login.jsx';
 import Movie from './layouts/movie.jsx';
 import NoPage from './layouts/noPage.jsx';
 import GetFilms from './untils/getFilms.js';
+import Logout from './layouts/logout.jsx';
 
 function App() {
   const [getFilms, getYoutube] = GetFilms('list');
@@ -22,6 +23,7 @@ function App() {
         <Route path="/market" exact component={Market} />
         <Route path="/like" exact component={Like} />
         <Route path="/login" exact component={Login} />
+        <Route path="/log-out" exact component={Logout} />
         {getFilms.map((el, index) => (
           <Route
             key={el.imdbID + 1}

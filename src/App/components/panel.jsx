@@ -43,18 +43,18 @@ const Panel = () => {
         </form>
       </div>
       <div className="panel__search-hidden-result">
-        {1 < getFilms.length
-          ? getFilms.map((el) => {
-              return el.Title.toLowerCase().trim() ===
-                change.toLowerCase().trim() ? (
+        {1 < getFilms.length &&
+          getFilms.map((el) => {
+            return (
+              el.Title.toLowerCase().trim() === change.toLowerCase().trim() && (
                 <Link to={'/films/' + el.imdbID} key={el.imdbID + 1}>
                   <div>
                     <img src={el.Poster} alt="" /> <p>{el.Title}</p>
                   </div>
                 </Link>
-              ) : null;
-            })
-          : null}
+              )
+            );
+          })}
       </div>
       <div
         className="panel__icon-profile"
@@ -67,17 +67,29 @@ const Panel = () => {
         />
       </div>
       <div className={dropDown ? 'panel__dropdown' : 'panel__none'}>
-        <Link className="panel__profile-link" to={'/profile'}>
+        <Link
+          className="panel__profile-link"
+          to={'/profile'}
+          onClick={() => setDropDown(!dropDown)}
+        >
           <p className="panel__profile-paragraph">
             <i className="bi bi-person"></i> Profile
           </p>
         </Link>
-        <Link className="panel__profile-link" to={'/settings'}>
+        <Link
+          className="panel__profile-link"
+          to={'/settings'}
+          onClick={() => setDropDown(!dropDown)}
+        >
           <p className="panel__profile-paragraph">
             <i className="bi bi-gear-fill"></i> Settings
           </p>
         </Link>
-        <Link className="panel__profile-link" to={'/log-out'}>
+        <Link
+          className="panel__profile-link"
+          to={'/log-out'}
+          onClick={() => setDropDown(!dropDown)}
+        >
           <p className="panel__profile-paragraph">
             <i className="bi bi-box-arrow-right"></i> Log-out
           </p>

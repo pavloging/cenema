@@ -210,7 +210,7 @@ const Market = () => {
         </div>
       </div>
       {/* Payment  */}
-      {typeof payment === 'number' ? (
+      {typeof payment === 'number' && (
         <div className="payment">
           <div className="binking">
             <form className="binking__form">
@@ -346,7 +346,7 @@ const Market = () => {
             <i className="bi bi-x-octagon" onClick={() => setPayment('')}></i>
           </div>
         </div>
-      ) : null}
+      )}
     </div>
   );
 };

@@ -7,7 +7,7 @@ const Field = ({ label, type, name, value, onChange, error }) => {
 
   return (
     <div className="mb-4">
-      {type !== 'date' ? (
+      {type !== 'date' && (
         <>
           <label htmlFor={name}>{label}</label>
           <div className="input-group has-validation">
@@ -30,7 +30,7 @@ const Field = ({ label, type, name, value, onChange, error }) => {
             )}
           </div>
         </>
-      ) : null}
+      )}
 
       <p className="text-danger">{error}</p>
     </div>

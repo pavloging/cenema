@@ -102,12 +102,24 @@ const Login = () => {
     return dataErr;
   };
 
-  //localStorage
+  //localStorage - authorization
   const handleSetData = () => {
     localStorage.setItem('email', data.email);
     localStorage.setItem('password', data.password);
     localStorage.setItem('data', data.date);
     localStorage.setItem('gender', gender);
+  };
+
+  //localStorage - login
+  const validateLogin = () => {
+    if (
+      localStorage.email === data.email &&
+      localStorage.password === data.password
+    ) {
+      alert('You are logged in');
+    } else {
+      alert('User is not found');
+    }
   };
 
   return (
@@ -132,23 +144,22 @@ const Login = () => {
               onChange={handleChange}
               error={dataErr.password}
             />
-            {login ? (
-              <Link to={'/profile'}>
-                <button
-                  className="btn btn-primary w-100 mx-auto"
-                  type="submit"
-                  disabled={
-                    dataErr.email === '' && dataErr.password === ''
-                      ? ''
-                      : 'disabled'
-                  }
-                >
-                  Submit
-                </button>
-              </Link>
-            ) : null}
+            {login && (
+              <button
+                className="btn btn-primary w-100 mx-auto"
+                onClick={() => validateLogin()}
+                type="button"
+                disabled={
+                  dataErr.email === '' && dataErr.password === ''
+                    ? ''
+                    : 'disabled'
+                }
+              >
+                Submit
+              </button>
+            )}
 
-            {login ? null : (
+            {!login && (
               <div className="register">
                 <div className="data mt-4 mb-3">
                   <p>Your birthday:</p>
