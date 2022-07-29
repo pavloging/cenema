@@ -6,7 +6,6 @@ const Logout = () => {
       const clearLocalStorage = Object.keys(localStorage).filter(
         (el) => el.slice(0, 3) !== 'obj'
       );
-      console.log(clearLocalStorage);
       clearLocalStorage.map((el) => {
         return localStorage.removeItem(el);
       });
