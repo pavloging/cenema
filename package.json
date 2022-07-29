@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "build:storybook": "node ./scripts/storybook.js",
     "test:unit": "react-scripts test",
@@ -54,6 +54,7 @@
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.3",
     "prettier": "^2.6.2"
   }
 }
