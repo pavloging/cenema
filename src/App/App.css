@@ -21,6 +21,8 @@
 }
 body {
   font-family: SplineSansMono;
+  background: linear-gradient(to right top, blue, #91fff6, blue);
+  background-attachment: fixed;
 }
 h1 {
   color: var(--font-color-white) !important;
@@ -407,6 +409,10 @@ h4 {
 .films {
   height: 100vh;
   margin-left: var(--margin-nav);
+  /* background: linear-gradient(to right top, blue, #91fff6, blue); */
+}
+.card {
+  border: none;
 }
 .films__list {
   display: flex;
@@ -415,10 +421,18 @@ h4 {
   margin: 0 12%;
 }
 .films__card {
+  border: none !important;
   width: 18rem;
   margin: 1rem !important;
   border-top-left-radius: calc(1rem - 1px) !important;
   border-top-right-radius: calc(1rem - 1px) !important;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 35px rgb(0 0 0 / 20%);
+  transition: 0.4s;
+}
+.films__card:hover{
+  box-shadow: 0 15px 35px rgb(0 0 0 / 50%);
+  transition: 0.4s;
 }
 .films__card-btn {
   color: var(--font-color-white) !important;

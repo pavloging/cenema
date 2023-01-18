@@ -14,10 +14,10 @@ const Settings = () => {
   const handleChangeBackground = () => {
     setBackground(!background);
     if (background) {
-      document.body.style.backgroundColor = '#fff';
+      document.body.style.background = 'linear-gradient(to right top, blue, #91fff6, blue)';
     }
     if (!background) {
-      document.body.style.backgroundColor = '#303030';
+      document.body.style.background = 'linear-gradient(to right top, #0000ab, #000f70, #0000bd)';
     }
   };
   return (
