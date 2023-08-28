@@ -21,7 +21,9 @@
 }
 body {
   font-family: SplineSansMono;
-  background: linear-gradient(to right top, blue, #91fff6, blue);
+  /* background: linear-gradient(to right top, blue, #91fff6, blue); */
+  /* background: linear-gradient(to right top, #ff0080, rgb(255 145 233), blue); */
+  background: linear-gradient(to right top, #ff0080, #2c2cff);
   background-attachment: fixed;
 }
 h1 {
@@ -278,6 +280,9 @@ h4 {
   background-size: cover;
 }
 .home__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 35%;
   margin-left: var(--margin-nav);
   padding: 14% 2%;
@@ -290,8 +295,7 @@ h4 {
 .home__child-title,
 .home__description-title,
 .home__link {
-  margin: 10px;
-  margin-bottom: 20px;
+  margin: 8px;
 }
 .home__paragraph {
   width: fit-content;
@@ -306,15 +310,17 @@ h4 {
   font-size: 2rem;
 }
 .home__child-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
 }
 .home__description-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 .home__link {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 3vh;
-  padding: 5% 10%;
+  padding: 8% 10%;
   text-transform: uppercase;
   letter-spacing: 4px;
   text-decoration: none;
@@ -365,14 +371,14 @@ h4 {
   animation: i 0.8s ease-in-out infinite;
 }
 .home__poster img {
-  width: 14vw;
+  width: 12vw;
   margin: 0 20px;
   border-radius: 15px;
   transition: var(--transition);
   cursor: pointer;
 }
 .home__poster img:hover {
-  width: 15vw;
+  width: 14vw;
   transform: rotate(5deg);
   transition: var(--transition);
 }
@@ -413,6 +419,8 @@ h4 {
 }
 .card {
   border: none;
+  background-color: #ffffffc9 !important;
+  border-radius: 24px !important;
 }
 .films__list {
   display: flex;
@@ -478,6 +486,9 @@ h4 {
 }
 .movie__title {
   color: var(--font-color) !important;
+}
+.movie__img{
+  border-radius: 20px;
 }
 .paginate {
   display: flex;
@@ -1434,13 +1445,15 @@ input::-webkit-inner-spin-button {
     font-size: 1rem;
   }
   .home__film-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .home__child-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .home__description-title {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
+    max-height: 30%;
+    overflow: auto;
   }
   .home__link {
     padding: 3% 5%;

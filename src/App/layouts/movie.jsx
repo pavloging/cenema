@@ -2,7 +2,7 @@ const Movie = ({ film, youtube }) => {
   return (
     <div className="movie">
       <h1 className="movie__title">{film.Title}</h1>
-      <img src={film.Poster} alt="" />
+      <img className="movie__img" src={film.Poster} alt="" />
       <h4>Year: {film.Year}</h4>
       <h4>Released: {film.Released}</h4>
       <h4>Runtime: {film.Runtime}</h4>
