@@ -484,11 +484,27 @@ h4 {
   margin-left: var(--margin-nav);
   padding: 20px;
 }
-.movie__title {
+/* .movie__title {
   color: var(--font-color) !important;
-}
+} */
 .movie__img{
   border-radius: 20px;
+}
+.movie__container{
+  display: flex;
+  align-items: center;
+  margin: 50px;
+}
+.movie__description{
+  padding-left: 30px;
+}
+.movie__description h1,
+.movie__description h4,
+.movie__description h5{
+  color: var(--font-color-white) !important;
+}
+.movie__iframe{
+  padding: 50px;
 }
 .paginate {
   display: flex;
@@ -1463,6 +1479,21 @@ input::-webkit-inner-spin-button {
   }
   .login__box {
     margin: 25px;
+  }
+  .movie{
+    margin: auto;
+  }
+  .movie__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .movie__description{
+    padding: 0;
+    margin-top: 20px;
+  }
+  .movie__iframe{
+    padding: 0;
   }
   .market__card {
     min-width: 260px;
